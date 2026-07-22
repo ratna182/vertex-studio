@@ -32,6 +32,40 @@ body {
 }
 
 /* ----------------------------------------------------
+   FLOATING STICKY WHATSAPP BUTTON
+---------------------------------------------------- */
+.sticky-wa-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 99;
+  background: #25D366;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sticky-wa-float:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.45);
+  background: #20BA5A;
+}
+
+.wa-float-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ----------------------------------------------------
    NAVIGATION BAR WITH SHIMMER
 ---------------------------------------------------- */
 .navbar {
@@ -308,6 +342,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
   background-color: var(--btn-dark);
   color: #ffffff;
   font-family: var(--font-serif);
@@ -346,10 +381,6 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
-.btn-dark:active {
-  transform: translateY(-1px) scale(1);
-}
-
 /* 3D LUXURY TILT IMAGE WRAPPER */
 .image-wrapper {
   width: 100%;
@@ -363,19 +394,6 @@ body {
   perspective: 1000px;
 }
 
-.image-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 40%, rgba(0,0,0,0.1) 100%);
-  pointer-events: none;
-}
-
-.image-wrapper:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
-}
-
 .image-wrapper img {
   width: 100%;
   height: 100%;
@@ -386,6 +404,172 @@ body {
 
 .image-wrapper:hover img {
   transform: scale(1.06);
+}
+
+/* ----------------------------------------------------
+   PORTFOLIO SHOWCASE SECTION
+---------------------------------------------------- */
+.portfolio-section {
+  padding: 6.5rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.portfolio-main-title {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: var(--text-main);
+  margin-bottom: 3.5rem;
+}
+
+.featured-portfolio-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  background: var(--bg-cream);
+  padding: 2.5rem;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 3.5rem;
+}
+
+.portfolio-image-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.portfolio-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-portfolio-card:hover .portfolio-image-wrapper img {
+  transform: scale(1.04);
+}
+
+.live-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(22, 21, 20, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+}
+
+.portfolio-category {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.portfolio-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.portfolio-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-tags span {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  background: rgba(0,0,0,0.05);
+  color: var(--text-main);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.sub-portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.sub-portfolio-card {
+  background: var(--bg-cream);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
+}
+
+.sub-portfolio-card:hover {
+  transform: translateY(-5px);
+}
+
+.sub-portfolio-img {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.sub-portfolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sub-portfolio-meta {
+  padding: 1.5rem;
+}
+
+.sub-portfolio-meta .cat {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.sub-portfolio-meta h4 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.sub-portfolio-meta p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
 /* ----------------------------------------------------
@@ -776,6 +960,16 @@ body {
     display: none;
   }
 
+  .featured-portfolio-card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.8rem;
+  }
+
+  .sub-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
   .iridescent-section {
     padding: 6.5rem 1.5rem 4rem;
   }
@@ -807,6 +1001,17 @@ body {
 
   .newsletter-form {
     max-width: 100%;
+  }
+
+  .sticky-wa-float span {
+    display: none;
+  }
+
+  .sticky-wa-float {
+    padding: 0.8rem;
+    border-radius: 50%;
+    bottom: 1.5rem;
+    right: 1.5rem;
   }
 
   .star-1 { top: 8%; left: 80%; }
