@@ -138,8 +138,55 @@ function setupScrollReveal() {
   });
 }
 
-// 3D Parallax Card Tilt & Ambient Cursor Spotlight
+// Helper to check if screen is mobile / touch device
+function isMobileView() {
+  return window.innerWidth <= 768 || ('ontouchstart' in window && window.innerWidth <= 992);
+}
+
+// Mobile Hamburger Navigation Drawer
+function toggleMobileMenu() {
+  const drawer = document.getElementById('mobileNavDrawer');
+  const btn = document.getElementById('mobileMenuBtn');
+  if (drawer && btn) {
+    const isOpening = !drawer.classList.contains('active');
+    drawer.classList.toggle('active');
+    btn.classList.toggle('active');
+    document.body.style.overflow = isOpening ? 'hidden' : '';
+  }
+}
+
+function closeMobileMenu() {
+  const drawer = document.getElementById('mobileNavDrawer');
+  const btn = document.getElementById('mobileMenuBtn');
+  if (drawer && btn) {
+    drawer.classList.remove('active');
+    btn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// Sticky Mobile Bottom Action Bar Observer
+function setupMobileBottomBar() {
+  const bottomBar = document.getElementById('mobileBottomBar');
+  if (!bottomBar) return;
+
+  const handleScroll = () => {
+    if (window.innerWidth <= 768 && window.scrollY > 300) {
+      bottomBar.classList.add('visible');
+    } else {
+      bottomBar.classList.remove('visible');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll, { passive: true });
+  handleScroll();
+}
+
+// 3D Parallax Card Tilt & Ambient Cursor Spotlight (Disabled on mobile for performance)
 function setup3DTiltAndSpotlight() {
+  if (isMobileView()) return; // Ringan: Don't run mouse tilt calculations on mobile
+
   const cards = document.querySelectorAll('.service-card, .featured-project-card, .glass-mockup');
 
   cards.forEach(card => {
@@ -165,16 +212,27 @@ function setup3DTiltAndSpotlight() {
   });
 }
 
-// Interactive Architectural Particle Grid Canvas
+// Interactive Architectural Particle Grid Canvas (Lightweight for Mobile)
 function setupArchitecturalCanvas() {
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
+  // Ringan: On mobile screens, disable particle animation loop to save CPU & Battery
+  if (isMobileView()) {
+    canvas.style.display = 'none';
+    return;
+  }
+
   let width = canvas.width = window.innerWidth;
   let height = canvas.height = window.innerHeight;
 
   window.addEventListener('resize', () => {
+    if (isMobileView()) {
+      canvas.style.display = 'none';
+      return;
+    }
+    canvas.style.display = 'block';
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
   });
@@ -220,6 +278,8 @@ function setupArchitecturalCanvas() {
   });
 
   function animate() {
+    if (isMobileView()) return; // Stop loop if resized to mobile
+
     ctx.clearRect(0, 0, width, height);
 
     for (let i = 0; i < particles.length; i++) {
@@ -261,8 +321,10 @@ function setupArchitecturalCanvas() {
   animate();
 }
 
-// Custom Magnetic Follower Cursor
+// Custom Magnetic Follower Cursor (Disabled on mobile)
 function setupMagneticCursor() {
+  if (isMobileView()) return; // Ringan: Don't create cursor loop on touch devices
+
   const cursorRing = document.createElement('div');
   cursorRing.className = 'custom-cursor-ring';
   document.body.appendChild(cursorRing);
@@ -278,6 +340,8 @@ function setupMagneticCursor() {
   });
 
   function renderCursor() {
+    if (isMobileView()) return;
+
     ringX += (mouseX - ringX) * 0.15;
     ringY += (mouseY - ringY) * 0.15;
 
@@ -314,5 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setup3DTiltAndSpotlight();
   setupArchitecturalCanvas();
   setupMagneticCursor();
+  setupMobileBottomBar();
 });
+
 
