@@ -128,6 +128,9 @@ function handleSubscribe(event) {
   const toast = document.getElementById('toastMsg');
 
   if (emailInput.value) {
+    if (typeof window.trackEvent === 'function') {
+      window.trackEvent('newsletter_submit', { form_id: 'subscribeForm' });
+    }
     toast.innerText = `Terima kasih! Email (${emailInput.value}) telah terdaftar. Tim kami akan segera menghubungi Anda.`;
     toast.classList.add('show');
     emailInput.value = '';

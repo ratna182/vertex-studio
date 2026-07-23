@@ -53,7 +53,12 @@
           <p class="section-text">
             <strong>VERTEX STUDIO</strong> menghadirkan standar estetika tingkat tinggi untuk Desain Grafis, Visualisasi 3D Photorealistic, Website Custom, Landing Page High-Converting, hingga Sistem Kasir POS Modern. Kami mengombinasikan presisi arsitektural dengan pengalaman digital yang intuitif.
           </p>
-          <button class="btn-dark" onclick="openModal('services')">Jelajahi 6 Layanan</button>
+          <div class="hero-actions">
+            <button class="btn-dark" onclick="openModal('services')">Jelajahi 6 Layanan</button>
+            <a href="https://wa.me/6287889527901?text=Halo%20VERTEX%20STUDIO,%20saya%20ingin%20meminta%20estimasi%20biaya%20proyek." target="_blank" class="btn-dark" data-track="cost_calculator_click" data-track-location="hero">
+              Hitung Estimasi Biaya
+            </a>
+          </div>
         </div>
 
         <div class="image-wrapper reveal">
@@ -152,7 +157,7 @@
           </div>
 
           <div class="portfolio-action-row">
-            <a href="https://skemahq-website.vercel.app/" target="_blank" class="btn-dark">
+            <a href="https://skemahq-website.vercel.app/" target="_blank" class="btn-dark" data-track="portfolio_live_click" data-portfolio-name="Skema HQ">
               <span>Buka Site Live</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -272,6 +277,8 @@
   <!-- Toast Notification -->
   <div class="toast-msg" id="toastMsg">Terima kasih! Email Anda telah terdaftar.</div>
 
+  <script src="analytics-config.js"></script>
+  <script src="analytics.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

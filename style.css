@@ -337,6 +337,12 @@ body {
   color: var(--text-main);
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
 /* Luxurious Shimmering Dark Button */
 .btn-dark {
   display: inline-flex;
@@ -1001,6 +1007,14 @@ body {
 
   .newsletter-form {
     max-width: 100%;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn-dark {
+    flex: 1 1 100%;
   }
 
   .sticky-wa-float span {
