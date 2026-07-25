@@ -90,24 +90,158 @@
   <!-- Schema.org -->
   <!-- ========================= -->
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Vertex Studio",
-    "url":"https://vertex-studio-theta.vercel.app/",
-    "image":"https://vertex-studio-theta.vercel.app/og-image.jpg",
-    "telephone":"+6287889527901",
-    "priceRange":"$$",
-    "address":{
-      "@type":"PostalAddress",
-      "addressCountry":"ID"
+  <!-- ========================= -->
+<!-- Schema.org JSON-LD -->
+<!-- ========================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Organization",
+      "@id": "https://vertex-studio-theta.vercel.app/#organization",
+      "name": "Vertex Studio",
+      "url": "https://vertex-studio-theta.vercel.app/",
+      "logo": "https://vertex-studio-theta.vercel.app/favicon.png",
+      "image": "https://vertex-studio-theta.vercel.app/og-image.jpg",
+      "telephone": "+6287889527901",
+      "email": "vertexstudio91@gmail.com",
+      "sameAs": [
+        "https://wa.me/6287889527901"
+      ]
     },
-    "sameAs":[
-      "https://wa.me/6287889527901"
-    ]
-  }
-  </script>
+
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://vertex-studio-theta.vercel.app/#localbusiness",
+      "name": "Vertex Studio",
+      "image": "https://vertex-studio-theta.vercel.app/og-image.jpg",
+      "url": "https://vertex-studio-theta.vercel.app/",
+      "telephone": "+6287889527901",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID"
+      },
+      "areaServed": "Indonesia",
+      "openingHours": "Mo-Su 08:00-22:00"
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://vertex-studio-theta.vercel.app/#website",
+      "url": "https://vertex-studio-theta.vercel.app/",
+      "name": "Vertex Studio",
+      "publisher": {
+        "@id": "https://vertex-studio-theta.vercel.app/#organization"
+      },
+      "inLanguage": "id-ID"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://vertex-studio-theta.vercel.app/#service-website",
+      "serviceType": "Website Development",
+      "provider": {
+        "@id": "https://vertex-studio-theta.vercel.app/#organization"
+      },
+      "areaServed": "Indonesia",
+      "description": "Jasa pembuatan website custom profesional untuk bisnis, perusahaan, UMKM dan personal branding."
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://vertex-studio-theta.vercel.app/#service-landingpage",
+      "serviceType": "Landing Page",
+      "provider": {
+        "@id": "https://vertex-studio-theta.vercel.app/#organization"
+      },
+      "areaServed": "Indonesia",
+      "description": "Landing page modern dengan desain responsif dan SEO Friendly."
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://vertex-studio-theta.vercel.app/#service-pos",
+      "serviceType": "Point of Sale (POS)",
+      "provider": {
+        "@id": "https://vertex-studio-theta.vercel.app/#organization"
+      },
+      "areaServed": "Indonesia",
+      "description": "Pembuatan aplikasi kasir POS untuk toko, UMKM, restoran dan bisnis."
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://vertex-studio-theta.vercel.app/#service-render",
+      "serviceType": "3D Rendering & Visualization",
+      "provider": {
+        "@id": "https://vertex-studio-theta.vercel.app/#organization"
+      },
+      "areaServed": "Indonesia",
+      "description": "Visualisasi 3D Interior, Eksterior, Booth Exhibition, Produk dan Arsitektur."
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://vertex-studio-theta.vercel.app/#service-design",
+      "serviceType": "Graphic Design",
+      "provider": {
+        "@id": "https://vertex-studio-theta.vercel.app/#organization"
+      },
+      "areaServed": "Indonesia",
+      "description": "Desain banner, brosur, logo, branding, media sosial dan kebutuhan promosi."
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://vertex-studio-theta.vercel.app/#faq",
+      "mainEntity": [
+
+        {
+          "@type": "Question",
+          "name": "Apa saja layanan Vertex Studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vertex Studio menyediakan jasa Website Custom, Landing Page, Aplikasi Kasir POS, Desain 3D Rendering, Desain Grafis, Branding, Banner dan Undangan Digital."
+          }
+        },
+
+        {
+          "@type": "Question",
+          "name": "Apakah melayani seluruh Indonesia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. Seluruh layanan dapat dikerjakan secara online untuk klien di seluruh Indonesia."
+          }
+        },
+
+        {
+          "@type": "Question",
+          "name": "Apakah bisa konsultasi sebelum memesan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tentu. Konsultasi gratis untuk menentukan solusi yang paling sesuai dengan kebutuhan proyek Anda."
+          }
+        },
+
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara menghubungi Vertex Studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anda dapat menghubungi kami melalui WhatsApp di +62 878-8952-7901."
+          }
+        }
+
+      ]
+    }
+
+  ]
+}
+</script>
 
 </head>
 
