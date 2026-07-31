@@ -26,12 +26,10 @@
 <!-- PWA -->
 <link rel="manifest" href="/manifest.webmanifest">
 
-<!-- Theme Color -->
-<meta name="theme-color" content="#111827">
-
 <!-- DNS Prefetch -->
 <link rel="dns-prefetch" href="//www.googletagmanager.com">
 <link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" as="image" href="images/hero.png" fetchpriority="high">
 
 <!-- Styles -->
 <link rel="stylesheet" href="style.css">
@@ -56,6 +54,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Vertex Studio">
+  <meta property="og:image:type" content="image/jpeg">
 
   <!-- ========================= -->
   <!-- Twitter / X -->
@@ -68,6 +67,7 @@
   <meta name="twitter:description" content="Website, Landing Page, POS Kasir, Desain 3D Rendering, Desain Grafis, Banner dan Undangan Digital.">
 
   <meta name="twitter:image" content="https://vertex-studio-theta.vercel.app/og-image.jpg">
+  <meta name="twitter:image:alt" content="Vertex Studio">
 
   <!-- ========================= -->
   <!-- Google Analytics -->
@@ -293,7 +293,7 @@
         </div>
 
         <div class="image-wrapper reveal">
-          <img src="images/hero.png" alt="VERTEX STUDIO Digital Architecture 3D Visual" loading="eager">
+          <img src="images/hero.png" alt="VERTEX STUDIO Digital Architecture 3D Visual" loading="eager" width="1024" height="1024" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -369,7 +369,7 @@
       <!-- Featured Portfolio Item 1: Skema HQ Website -->
       <div class="featured-portfolio-card reveal">
         <div class="portfolio-image-wrapper">
-          <img src="images/portfolio-skemahq.png" alt="Skema HQ Digital Agency Website" loading="lazy">
+          <img src="images/portfolio-skemahq.png" alt="Skema HQ Digital Agency Website" loading="lazy" width="1024" height="1024">
           <span class="live-badge">🟢 LIVE WEBSITE</span>
         </div>
 
@@ -400,7 +400,7 @@
       <div class="sub-portfolio-grid">
         <div class="sub-portfolio-card reveal">
           <div class="sub-portfolio-img">
-            <img src="images/portfolio-booth.svg" alt="3D Exhibition & Booth Stand Render" loading="lazy">
+            <img src="images/portfolio-booth.svg" alt="3D Exhibition & Booth Stand Render" loading="lazy" width="1200" height="675">
           </div>
           <div class="sub-portfolio-meta">
             <span class="cat">3D RENDER & EXHIBITION</span>
@@ -411,7 +411,7 @@
 
         <div class="sub-portfolio-card reveal">
           <div class="sub-portfolio-img">
-            <img src="images/portfolio-pos.png" alt="Vertex POS Cloud Engine Dashboard" loading="lazy">
+            <img src="images/portfolio-pos.png" alt="Vertex POS Cloud Engine Dashboard" loading="lazy" width="1024" height="1024">
           </div>
           <div class="sub-portfolio-meta">
             <span class="cat">APPLICATION ENGINE</span>
@@ -428,7 +428,7 @@
     <div class="container">
       <div class="editorial-grid reverse">
         <div class="image-wrapper reveal">
-          <img src="images/inspiration.png" alt="VERTEX STUDIO 3D Abstract Sculpture Render" loading="lazy">
+          <img src="images/inspiration.png" alt="VERTEX STUDIO 3D Abstract Sculpture Render" loading="lazy" width="1024" height="1024">
         </div>
 
         <div class="editorial-content reveal">
