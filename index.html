@@ -20,9 +20,6 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://vertex-studio-theta.vercel.app/">
 
-  <!-- Preload Hero -->
-  <link rel="preload" as="image" href="images/hero.png" fetchpriority="high">
-
   <!-- Favicon -->
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>">
@@ -33,7 +30,6 @@
 <!-- DNS Prefetch -->
 <link rel="dns-prefetch" href="//www.googletagmanager.com">
 <link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preload" as="image" href="images/hero.png" fetchpriority="high">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -283,6 +279,7 @@
   <!-- Hero -->
   <section class="hero" id="about">
     <div class="hero-bg" aria-hidden="true"></div>
+    <canvas class="hero-waves" aria-hidden="true" role="presentation"></canvas>
     <div class="hero-veil" aria-hidden="true"></div>
 
     <div class="container hero-inner">
@@ -309,21 +306,6 @@
           <li><span class="trust-dot"></span>SEO Friendly</li>
           <li><span class="trust-dot"></span>Konsultasi Tanpa Biaya</li>
         </ul>
-      </div>
-
-      <div class="hero-visual reveal">
-        <div class="image-wrapper hero-card">
-          <img src="images/hero.png" width="1024" height="1024" alt="Render visualisasi 3D arsitektur oleh VERTEX STUDIO" loading="eager">
-          <div class="hero-card-overlay" aria-hidden="true"></div>
-          <span class="hero-card-tag">
-            <svg class="spark" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-              <path d="M50 0 L58 38 L96 46 L62 62 L74 98 L50 72 L26 98 L38 62 L4 46 L42 38 Z"/>
-            </svg>
-            3D Render Photorealistic
-          </span>
-        </div>
-        <span class="float-chip chip-a">6 Layanan Unggulan</span>
-        <span class="float-chip chip-b">Web · POS · Branding</span>
       </div>
     </div>
   </section>
@@ -641,5 +623,6 @@
   <div class="toast-msg" id="toastMsg" role="status">Terima kasih! Email Anda telah terdaftar.</div>
 
   <script src="script.js"></script>
+  <script src="wave.js"></script>
 </body>
 </html>

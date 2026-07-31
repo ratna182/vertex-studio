@@ -327,24 +327,37 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(950px 620px at 88% 8%, rgba(201, 168, 108, 0.12), transparent 55%),
-    radial-gradient(820px 620px at 6% 92%, rgba(58, 78, 128, 0.22), transparent 55%),
-    radial-gradient(700px 500px at 50% 50%, rgba(20, 25, 38, 0.35), transparent 60%),
-    linear-gradient(178deg, #0B0F1A 0%, #0D1322 55%, #0B0F1A 100%);
+    radial-gradient(950px 620px at 84% 10%, rgba(201, 168, 108, 0.10), transparent 55%),
+    radial-gradient(820px 620px at 8% 94%, rgba(58, 78, 128, 0.20), transparent 55%),
+    linear-gradient(178deg, #0B0F1A 0%, #0C1120 55%, #0B0F1A 100%);
+}
+
+.hero-waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
 }
 
 .hero-veil {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(11, 15, 26, 0.7) 0%, transparent 30%, transparent 68%, rgba(11, 15, 26, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(11, 15, 26, 0.55) 0%, transparent 32%, transparent 68%, rgba(11, 15, 26, 0.8) 100%);
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 64px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-copy {
+  max-width: 760px;
 }
 
 .hero-eyebrow {
@@ -424,83 +437,11 @@ body {
   flex: 0 0 auto;
 }
 
-/* hero visual card */
-.hero-visual {
-  position: relative;
-}
-
-.image-wrapper {
-  position: relative;
-  transition: transform 0.35s var(--ease);
-  will-change: transform;
-}
-
-.hero-card {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
-  aspect-ratio: 1 / 1;
-}
-
-.hero-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(200deg, rgba(11, 15, 26, 0) 42%, rgba(11, 15, 26, 0.62) 100%);
-  pointer-events: none;
-}
-
-.hero-card-tag {
-  position: absolute;
-  left: 18px;
-  bottom: 18px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 16px;
-  border-radius: 40px;
-  border: 1px solid var(--line);
-  background: rgba(11, 15, 26, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold-hover);
-}
-
-.float-chip {
-  position: absolute;
-  padding: 10px 18px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--cream);
-}
-
-.chip-a {
-  top: -18px;
-  right: 28px;
-}
-
-.chip-b {
-  bottom: 40px;
-  left: -22px;
-  color: var(--gold-hover);
+/* hero CTA pills */
+.hero-actions .btn-gold,
+.hero-actions .btn-gold-outline {
+  border-radius: 999px;
+  padding: 15px 34px;
 }
 
 /* ============================================================
@@ -1418,10 +1359,6 @@ body {
    RESPONSIVE
 ============================================================ */
 @media (max-width: 1024px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 70px;
-  }
   .hero {
     padding-top: 170px;
   }
@@ -1497,14 +1434,6 @@ body {
   }
   .newsletter-btn {
     width: 100%;
-  }
-  .chip-a {
-    top: -14px;
-    right: 10px;
-  }
-  .chip-b {
-    bottom: 30px;
-    left: 10px;
   }
   .sticky-wa-float span {
     display: none;
