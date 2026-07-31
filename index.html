@@ -14,10 +14,13 @@
 
   <meta name="author" content="Vertex Studio">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#111827">
+  <meta name="theme-color" content="#0B0F1A">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://vertex-studio-theta.vercel.app/">
+
+  <!-- Preload Hero -->
+  <link rel="preload" as="image" href="images/hero.png" fetchpriority="high">
 
   <!-- Favicon -->
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -29,7 +32,6 @@
 <!-- DNS Prefetch -->
 <link rel="dns-prefetch" href="//www.googletagmanager.com">
 <link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preload" as="image" href="images/hero.png" fetchpriority="high">
 
 <!-- Styles -->
 <link rel="stylesheet" href="style.css">
@@ -51,10 +53,11 @@
 
   <meta property="og:image" content="https://vertex-studio-theta.vercel.app/og-image.jpg">
 
+  <meta property="og:image:type" content="image/jpeg">
+
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Vertex Studio">
-  <meta property="og:image:type" content="image/jpeg">
 
   <!-- ========================= -->
   <!-- Twitter / X -->
@@ -67,6 +70,7 @@
   <meta name="twitter:description" content="Website, Landing Page, POS Kasir, Desain 3D Rendering, Desain Grafis, Banner dan Undangan Digital.">
 
   <meta name="twitter:image" content="https://vertex-studio-theta.vercel.app/og-image.jpg">
+
   <meta name="twitter:image:alt" content="Vertex Studio">
 
   <!-- ========================= -->
@@ -87,12 +91,8 @@
   </script>
 
   <!-- ========================= -->
-  <!-- Schema.org -->
+  <!-- Schema.org JSON-LD -->
   <!-- ========================= -->
-
-  <!-- ========================= -->
-<!-- Schema.org JSON-LD -->
-<!-- ========================= -->
 
 <script type="application/ld+json">
 {
@@ -258,255 +258,387 @@
   <!-- Navigation Bar -->
   <header class="navbar">
     <a href="#" class="nav-brand">
-      VERTEX <span>STUDIO</span>
+      VERTEX <span class="nav-brand-badge">STUDIO</span>
+      <span class="nav-brand-tag">Digital Architecture</span>
     </a>
-    <nav class="nav-links">
-      <a href="#about">Tentang Kami</a>
-      <a href="#services">Layanan Utama</a>
-      <a href="#portfolio">Portofolio Live</a>
-      <a href="#inspiration">Inspirasi</a>
-      <a href="#contact">Konsultasi Direct</a>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#about">Tentang</a>
+      <a href="#services">Layanan</a>
+      <a href="#portfolio">Portofolio</a>
+      <a href="#inspiration">Keunggulan</a>
+      <a href="#contact">Kontak</a>
     </nav>
-    <a href="https://wa.me/6287889527901?text=Halo%20VERTEX%20STUDIO,%20saya%20ingin%20konsultasi%20project." target="_blank" class="nav-wa-btn">
-      WhatsApp Direct ↗
+    <a href="https://wa.me/6287889527901?text=Halo%20VERTEX%20STUDIO,%20saya%20ingin%20konsultasi%20project." target="_blank" class="nav-cta">
+      Konsultasi Gratis
     </a>
   </header>
 
-  <!-- Section 1: Iridescent Mesh Hero (Tentang Kami) -->
-  <section class="iridescent-section" id="about">
-    <div class="mesh-overlay"></div>
+  <!-- Hero -->
+  <section class="hero" id="about">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-veil" aria-hidden="true"></div>
 
-    <!-- Floating Star -->
-    <svg class="star-sparkle star-1" viewBox="0 0 100 100" fill="currentColor">
-      <path d="M50 0 L58 38 L96 46 L62 62 L74 98 L50 72 L26 98 L38 62 L4 46 L42 38 Z"/>
-    </svg>
-
-    <div class="container">
-      <div class="editorial-grid">
-        <div class="editorial-content reveal">
-          <span class="editorial-badge">Minimalist & High-End Studio</span>
-          <h1 class="section-title">Tentang Kami</h1>
-          <p class="section-text">
-            <strong>VERTEX STUDIO</strong> menghadirkan standar estetika tingkat tinggi untuk Desain Grafis, Visualisasi 3D Photorealistic, Website Custom, Landing Page High-Converting, hingga Sistem Kasir POS Modern. Kami mengombinasikan presisi arsitektural dengan pengalaman digital yang intuitif.
-          </p>
-          <button class="btn-dark" onclick="openModal('services')">Jelajahi 6 Layanan</button>
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <span class="hero-eyebrow">
+          <svg class="spark" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+            <path d="M50 0 L58 38 L96 46 L62 62 L74 98 L50 72 L26 98 L38 62 L4 46 L42 38 Z"/>
+          </svg>
+          Digital Architecture &amp; Creative Solutions
+        </span>
+        <h1 class="hero-title">Arsitektur Digital untuk Bisnis yang <em>Berkembang</em></h1>
+        <span class="hero-script">Crafting Digital Excellence</span>
+        <p class="hero-sub">
+          VERTEX STUDIO membantu bisnis di Indonesia tampil lebih profesional — lewat desain grafis &amp; branding,
+          visualisasi 3D, website custom, landing page, undangan digital, dan aplikasi kasir POS.
+          Semua dikerjakan dengan presisi arsitektural dan pengalaman digital yang intuitif.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-gold">Jelajahi Layanan</a>
+          <a href="https://wa.me/6287889527901?text=Halo%20VERTEX%20STUDIO,%20saya%20ingin%20konsultasi%20project." target="_blank" class="btn-gold-outline">Konsultasi Gratis</a>
         </div>
+        <ul class="hero-trust">
+          <li><span class="trust-dot"></span>Desain Premium</li>
+          <li><span class="trust-dot"></span>SEO Friendly</li>
+          <li><span class="trust-dot"></span>Konsultasi Tanpa Biaya</li>
+        </ul>
+      </div>
 
-        <div class="image-wrapper reveal">
-          <img src="images/hero.png" alt="VERTEX STUDIO Digital Architecture 3D Visual" loading="eager" width="1024" height="1024" fetchpriority="high">
+      <div class="hero-visual reveal">
+        <div class="image-wrapper hero-card">
+          <img src="images/hero.png" width="1024" height="1024" alt="Render visualisasi 3D arsitektur oleh VERTEX STUDIO" loading="eager">
+          <div class="hero-card-overlay" aria-hidden="true"></div>
+          <span class="hero-card-tag">
+            <svg class="spark" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+              <path d="M50 0 L58 38 L96 46 L62 62 L74 98 L50 72 L26 98 L38 62 L4 46 L42 38 Z"/>
+            </svg>
+            3D Render Photorealistic
+          </span>
         </div>
+        <span class="float-chip chip-a">6 Layanan Unggulan</span>
+        <span class="float-chip chip-b">Web · POS · Branding</span>
       </div>
     </div>
-
-    <!-- Wavy White Vector Line (Top Curve) -->
-    <svg class="wavy-line-svg wavy-top" viewBox="0 0 1440 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-50 180 C 250 200, 300 40, 600 120 C 900 200, 1100 30, 1500 160" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
   </section>
 
-  <!-- Services Grid Quick Bar -->
-  <section class="services-overview-section" id="services">
+  <!-- Services -->
+  <section class="section services-section" id="services">
     <div class="container">
-      <div class="services-header text-center reveal">
-        <span class="sub-tag">6 LAYANAN UNGGULAN</span>
-        <h2 class="services-main-title">Presisi Digital Untuk Bisnis Anda</h2>
+      <div class="section-head reveal">
+        <span class="sec-label">Layanan Kami</span>
+        <h2 class="section-title">Solusi Digital dalam <em>Satu Studio</em></h2>
+        <p class="section-desc">Enam layanan yang saling melengkapi untuk kebutuhan visual dan digital bisnis Anda.</p>
       </div>
 
-      <div class="services-cards-grid">
-        <div class="service-box reveal" onclick="openModal('service1')">
-          <span class="box-num">01</span>
-          <h3>Desain Grafis & Branding</h3>
-          <p>Logo vector, feed promosi, packaging produk, dan panduan identitas brand eksklusif.</p>
-          <span class="box-link">Detail Layanan →</span>
+      <div class="services-grid">
+        <div class="service-box glass reveal" onclick="openModal('service1')">
+          <div class="service-top">
+            <span class="box-num">01</span>
+            <span class="box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+                <circle cx="11" cy="11" r="2"/>
+              </svg>
+            </span>
+          </div>
+          <h3>Desain Grafis &amp; Branding</h3>
+          <p>Logo vector, identitas brand, packaging produk, hingga media promosi yang konsisten.</p>
+          <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
-        <div class="service-box reveal" onclick="openModal('service2')">
-          <span class="box-num">02</span>
-          <h3>Desain 3D & Render Visual</h3>
-          <p>Render produk photorealistic, desain interior/eksterior, booth pameran & modeling aset 3D.</p>
-          <span class="box-link">Detail Layanan →</span>
+        <div class="service-box glass reveal" onclick="openModal('service2')">
+          <div class="service-top">
+            <span class="box-num">02</span>
+            <span class="box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="M3.3 7 12 12l8.7-5"/>
+                <path d="M12 22V12"/>
+              </svg>
+            </span>
+          </div>
+          <h3>Desain 3D &amp; Render Visual</h3>
+          <p>Render produk photorealistic, interior, eksterior, hingga booth pameran.</p>
+          <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
-        <div class="service-box reveal" onclick="openModal('service3')">
-          <span class="box-num">03</span>
+        <div class="service-box glass reveal" onclick="openModal('service3')">
+          <div class="service-top">
+            <span class="box-num">03</span>
+            <span class="box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8"/>
+                <path d="M12 17v4"/>
+                <path d="m9 7-2 3 2 3"/>
+                <path d="m15 7 2 3-2 3"/>
+              </svg>
+            </span>
+          </div>
           <h3>Desain Web Custom</h3>
-          <p>Website perusahaan multi-halaman berkelas tinggi, cepat, responsive, dan ramah SEO Google.</p>
-          <span class="box-link">Detail Layanan →</span>
+          <p>Website perusahaan multi-halaman, cepat, responsif, dan ramah SEO.</p>
+          <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
-        <div class="service-box reveal" onclick="openModal('service4')">
-          <span class="box-num">04</span>
+        <div class="service-box glass reveal" onclick="openModal('service4')">
+          <div class="service-top">
+            <span class="box-num">04</span>
+            <span class="box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </span>
+          </div>
           <h3>Desain Landing Page</h3>
-          <p>Landing page promosi tunggal dengan layout high-converting untuk mendongkrak konversi iklan.</p>
-          <span class="box-link">Detail Layanan →</span>
+          <p>Halaman promosi tunggal berkonversi tinggi, terintegrasi WhatsApp.</p>
+          <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
-        <div class="service-box reveal" onclick="openModal('service5')">
-          <span class="box-num">05</span>
+        <div class="service-box glass reveal" onclick="openModal('service5')">
+          <div class="service-top">
+            <span class="box-num">05</span>
+            <span class="box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-10 6L2 7"/>
+              </svg>
+            </span>
+          </div>
           <h3>Undangan Digital</h3>
-          <p>Web undangan pernikahan / event interaktif dengan fitur rsvp, peta lokasi & audio player.</p>
-          <span class="box-link">Detail Layanan →</span>
+          <p>Web undangan interaktif dengan RSVP, galeri foto, dan audio player.</p>
+          <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
-        <div class="service-box reveal" onclick="openModal('service6')">
-          <span class="box-num">06</span>
+        <div class="service-box glass reveal" onclick="openModal('service6')">
+          <div class="service-top">
+            <span class="box-num">06</span>
+            <span class="box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/>
+                <path d="M8 7h8"/>
+                <path d="M8 11h8"/>
+                <path d="M8 15h5"/>
+              </svg>
+            </span>
+          </div>
           <h3>Aplikasi Kasir POS</h3>
-          <p>Sistem kasir toko & cafe berbasis web modern, pencatatan transaksi cepat & cetak struk WA.</p>
-          <span class="box-link">Detail Layanan →</span>
+          <p>Sistem kasir berbasis web dengan manajemen stok dan struk digital.</p>
+          <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
+      </div>
+
+      <div class="services-cta reveal">
+        <p>Butuh kombinasi beberapa layanan sekaligus?</p>
+        <button class="btn-gold" onclick="openModal('services')">Lihat Semua Layanan</button>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO SHOWCASE SECTION (PROYEK LIVE SHOWCASE) -->
-  <section class="portfolio-section" id="portfolio">
+  <!-- Portfolio -->
+  <section class="section portfolio-section" id="portfolio">
     <div class="container">
-      <div class="portfolio-header text-center reveal">
-        <span class="sub-tag">PROYEK TERBARU KAMI</span>
-        <h2 class="portfolio-main-title">Hasil Karya & Web Live</h2>
+      <div class="section-head reveal">
+        <span class="sec-label">Portofolio</span>
+        <h2 class="section-title">Karya yang Pernah <em>Kami Bangun</em></h2>
       </div>
 
-      <!-- Featured Portfolio Item 1: Skema HQ Website -->
-      <div class="featured-portfolio-card reveal">
-        <div class="portfolio-image-wrapper">
-          <img src="images/portfolio-skemahq.png" alt="Skema HQ Digital Agency Website" loading="lazy" width="1024" height="1024">
-          <span class="live-badge">🟢 LIVE WEBSITE</span>
+      <!-- Featured Portfolio Item -->
+      <div class="featured-portfolio-card glass reveal">
+        <div class="portfolio-image-frame">
+          <img src="images/portfolio-skemahq.png" width="1024" height="1024" alt="Tampilan website Skema HQ — platform digital agency oleh VERTEX STUDIO" loading="lazy">
+          <span class="live-badge"><span class="live-dot"></span>Live Website</span>
         </div>
-
-        <div class="portfolio-info-content">
-          <span class="portfolio-category">WEB ARCHITECTURE & CUSTOM PLATFORM</span>
-          <h3 class="portfolio-title">Skema HQ — Digital Engineering & Agency Platform</h3>
+        <div class="portfolio-info">
+          <span class="portfolio-category">Web Architecture &amp; Custom Platform</span>
+          <h3 class="portfolio-title">Skema HQ — Digital Engineering &amp; Agency Platform</h3>
           <p class="portfolio-desc">
-            Pengembangan platform web agency perusahaan berkelas eksekutif dengan arsitektur web modern, performa super cepat, dan desain visual glassmorphism yang memukau.
+            Platform web agency dengan arsitektur modern, performa cepat, dan desain visual yang elegan —
+            dibangun untuk mendukung operasional digital Skema HQ.
           </p>
-
           <div class="portfolio-tags">
             <span>Next.js</span>
             <span>TypeScript</span>
             <span>Custom UI/UX</span>
             <span>SEO Optimized</span>
           </div>
-
-          <div class="portfolio-action-row">
-            <a href="https://skemahq-website.vercel.app/" target="_blank" class="btn-dark">
-              <span>Buka Site Live</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
+          <a href="https://skemahq-website.vercel.app/" target="_blank" class="btn-gold-outline">
+            Buka Site Live <span class="box-arrow">↗</span>
+          </a>
         </div>
       </div>
 
-      <!-- Sub Portfolio Items Grid -->
+      <!-- Sub Portfolio Items -->
       <div class="sub-portfolio-grid">
-        <div class="sub-portfolio-card reveal">
-          <div class="sub-portfolio-img">
-            <img src="images/portfolio-booth.svg" alt="3D Exhibition & Booth Stand Render" loading="lazy" width="1200" height="675">
+        <div class="sub-portfolio-card glass reveal">
+          <div class="sub-img">
+            <img src="images/portfolio-booth.svg" width="1200" height="675" alt="Render 3D booth pameran dan display stand exhibition" loading="lazy">
           </div>
-          <div class="sub-portfolio-meta">
-            <span class="cat">3D RENDER & EXHIBITION</span>
-            <h4>3D Exhibition & Booth Stand Render</h4>
-            <p>Visualisasi 3D photorealistic untuk booth pameran, display panggung, dan arsitektur event eksklusif.</p>
+          <div class="sub-meta">
+            <span class="cat">3D Render &amp; Exhibition</span>
+            <h4>3D Exhibition &amp; Booth Stand Render</h4>
+            <p>Visualisasi 3D photorealistic untuk booth pameran, display panggung, dan arsitektur event.</p>
           </div>
         </div>
 
-        <div class="sub-portfolio-card reveal">
-          <div class="sub-portfolio-img">
-            <img src="images/portfolio-pos.png" alt="Vertex POS Cloud Engine Dashboard" loading="lazy" width="1024" height="1024">
+        <div class="sub-portfolio-card glass reveal">
+          <div class="sub-img">
+            <img src="images/portfolio-pos.png" width="1024" height="1024" alt="Tampilan dashboard Vertex POS — aplikasi kasir cloud untuk toko dan cafe" loading="lazy">
           </div>
-          <div class="sub-portfolio-meta">
-            <span class="cat">APPLICATION ENGINE</span>
+          <div class="sub-meta">
+            <span class="cat">Application Engine</span>
             <h4>Vertex POS Kasir Cloud System</h4>
-            <p>Aplikasi kasir web modern berkecepatan tinggi dengan integrasi struk digital & laporan real-time.</p>
+            <p>Aplikasi kasir web modern dengan integrasi struk digital dan laporan real-time.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 2: Cream Section (Inspirasi & Standar Karya) -->
-  <section class="cream-section" id="inspiration">
-    <div class="container">
-      <div class="editorial-grid reverse">
-        <div class="image-wrapper reveal">
-          <img src="images/inspiration.png" alt="VERTEX STUDIO 3D Abstract Sculpture Render" loading="lazy" width="1024" height="1024">
-        </div>
+  <!-- Why Choose Us -->
+  <section class="section why-section" id="inspiration">
+    <div class="container why-grid">
+      <div class="why-copy reveal">
+        <span class="sec-label">Mengapa Vertex</span>
+        <h2 class="section-title">Bekerja dengan Standar <em>Arsitektural</em></h2>
+        <p class="why-text">
+          Setiap karya dikerjakan dengan detail yang cermat — dari konsep, rendering 3D photorealistic,
+          identitas visual yang berkarakter, hingga arsitektur web berkecepatan tinggi. Desain yang baik
+          bukan hanya soal estetika, tetapi juga hasil nyata bagi bisnis Anda.
+        </p>
+        <ul class="why-points">
+          <li>Konsultasi gratis sebelum proyek dimulai</li>
+          <li>Proses transparan dari konsep hingga serah terima</li>
+          <li>Melayani seluruh Indonesia, dikerjakan online</li>
+        </ul>
+      </div>
 
-        <div class="editorial-content reveal">
-          <span class="editorial-badge">Inspirasi & Standar Karya</span>
-          <h2 class="section-title">Inspirasi Kami</h2>
-          <p class="section-text">
-            Setiap karya dirancang dengan detail arsitektural yang cermat — mulai dari konsep 3D rendering photorealistic, identitas visual yang berkarakter, hingga arsitektur web berkecepatan tinggi. Kami percaya bahwa desain terbaik bukan hanya tentang estetika yang memukau, tetapi juga menghadirkan hasil konversi nyata bagi bisnis Anda.
-          </p>
-          <a href="https://wa.me/6287889527901?text=Halo%20VERTEX%20STUDIO,%20saya%20ingin%20konsultasi%20proyek%20desain." target="_blank" class="btn-dark">Konsultasi Proyek</a>
+      <div class="why-stats reveal" role="list" aria-label="Keunggulan Vertex Studio dalam angka">
+        <div class="stat-box" role="listitem">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Layanan Unggulan</span>
+        </div>
+        <div class="stat-box" role="listitem">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Fokus Kepuasan</span>
+        </div>
+        <div class="stat-box" role="listitem">
+          <span class="stat-num">1-2</span>
+          <span class="stat-label">Hari Landing Page</span>
+        </div>
+        <div class="stat-box" role="listitem">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Konsultasi</span>
+        </div>
+      </div>
+
+      <div class="why-visual reveal">
+        <div class="why-image">
+          <img src="images/inspiration.png" width="1024" height="1024" alt="Karya render 3D abstrak skulptural VERTEX STUDIO" loading="lazy">
+          <div class="why-image-overlay" aria-hidden="true"></div>
+          <a href="https://wa.me/6287889527901?text=Halo%20VERTEX%20STUDIO,%20saya%20ingin%20konsultasi%20proyek%20desain." target="_blank" class="btn-gold why-cta">Konsultasi Proyek</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3: Iridescent Mesh Contact & Newsletter -->
-  <section class="iridescent-section" id="contact">
-    <div class="mesh-overlay"></div>
-
-    <!-- Floating Stars -->
-    <svg class="star-sparkle star-2" viewBox="0 0 100 100" fill="currentColor">
-      <path d="M50 0 L58 38 L96 46 L62 62 L74 98 L50 72 L26 98 L38 62 L4 46 L42 38 Z"/>
-    </svg>
-    <svg class="star-sparkle star-3" viewBox="0 0 100 100" fill="currentColor">
-      <path d="M50 0 L58 38 L96 46 L62 62 L74 98 L50 72 L26 98 L38 62 L4 46 L42 38 Z"/>
-    </svg>
-
+  <!-- Contact -->
+  <section class="section contact-section" id="contact">
     <div class="container">
-      <div class="newsletter-grid">
-        <div class="newsletter-content reveal">
-          <span class="editorial-badge">Mulai Proyek Anda</span>
-          <h2 class="newsletter-title">Langganan Info &<br>Konsultasi Proyek</h2>
-          <p class="newsletter-text">
-            Dapatkan penawaran khusus, konsultasi gratis, dan update portofolio terbaru langsung dari tim <strong>VERTEX STUDIO</strong>.
-          </p>
-          <div class="wa-direct-box">
-            <a href="https://wa.me/6287889527901?text=Halo%20VERTEX%20STUDIO,%20saya%20ingin%20diskusi%20proyek." target="_blank" class="btn-wa-link">
-              💬 Chat Direct WhatsApp (0878-8952-7901)
-            </a>
-          </div>
+      <div class="section-head reveal">
+        <span class="sec-label">Mulai Proyek</span>
+        <h2 class="section-title">Mari Diskusikan Kebutuhan <em>Anda</em></h2>
+        <p class="section-desc">Ceritakan proyek Anda — kami bantu wujudkan dengan solusi yang tepat.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info glass reveal">
+          <span class="sec-label sec-label-sm">Konsultasi Langsung</span>
+          <h3 class="contact-heading">Hubungi Kami</h3>
+          <p class="contact-row-label">WhatsApp</p>
+          <a href="https://wa.me/6287889527901" target="_blank" class="contact-phone">0878-8952-7901</a>
+          <p class="contact-row-label">Email</p>
+          <a href="mailto:vertexstudio91@gmail.com" class="contact-email">vertexstudio91@gmail.com</a>
+          <p class="contact-hours">Konsultasi setiap hari, pukul 08.00 – 22.00 WIB.</p>
+          <a href="https://wa.me/6287889527901?text=Halo%20VERTEX%20STUDIO,%20saya%20ingin%20diskusi%20proyek." target="_blank" class="btn-gold">
+            Chat WhatsApp
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
         </div>
 
-        <div class="newsletter-form-container reveal">
-          <form class="newsletter-form" id="subscribeForm" onsubmit="handleSubscribe(event)">
-            <input type="email" id="emailInput" class="newsletter-input" placeholder="* Masukkan Email Anda" required>
+        <div class="contact-form-card glass reveal">
+          <h3 class="form-title">Langganan Info &amp; Penawaran</h3>
+          <p class="form-desc">Dapatkan update portofolio dan penawaran khusus dari tim VERTEX STUDIO.</p>
+          <form id="subscribeForm" onsubmit="handleSubscribe(event)">
+            <input type="email" id="emailInput" class="newsletter-input" placeholder="Masukkan email Anda" required>
             <button type="submit" class="newsletter-btn">Kirim Email</button>
           </form>
         </div>
       </div>
     </div>
-
-    <!-- Wavy White Vector Line (Bottom Curve) -->
-    <svg class="wavy-line-svg wavy-bottom" viewBox="0 0 1440 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-50 140 C 350 240, 550 40, 950 160 C 1200 220, 1350 70, 1500 110" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
   </section>
 
-  <!-- Minimalist Footer -->
-  <footer class="footer-minimal">
-    <p>© VERTEX STUDIO — Digital Architecture & Creative Solutions. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bar">
+      <a href="#" class="footer-brand">
+        VERTEX <span class="nav-brand-badge">STUDIO</span>
+        <span class="nav-brand-tag">Digital Architecture</span>
+      </a>
+      <nav class="footer-links" aria-label="Navigasi footer">
+        <a href="#about">Tentang</a>
+        <a href="#services">Layanan</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://wa.me/6287889527901" target="_blank" aria-label="WhatsApp Vertex Studio" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        </a>
+        <a href="mailto:vertexstudio91@gmail.com" aria-label="Email Vertex Studio" class="social-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-10 6L2 7"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram Vertex Studio" class="social-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-copy">
+      <p>© 2026 VERTEX STUDIO — Digital Architecture &amp; Creative Solutions.</p>
+    </div>
   </footer>
 
-  <!-- Modal Component for Details -->
+  <!-- Modal Component -->
   <div class="modal-backdrop" id="infoModal" onclick="closeModal(event)">
     <div class="modal-box" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModalDirect()">&times;</button>
+      <button class="modal-close" onclick="closeModalDirect()" aria-label="Tutup">&times;</button>
       <h3 class="modal-title" id="modalTitle">Layanan VERTEX STUDIO</h3>
-      <div class="modal-body" id="modalBody">
-        <!-- Content injected dynamically via script.js -->
-      </div>
+      <div class="modal-body" id="modalBody"></div>
       <div class="modal-actions">
-        <a id="modalWaBtn" href="https://wa.me/6287889527901" target="_blank" class="btn-dark">Pesan via WhatsApp</a>
-        <button class="btn-outline-modal" onclick="closeModalDirect()">Tutup</button>
+        <a id="modalWaBtn" href="https://wa.me/6287889527901" target="_blank" class="btn-gold">Pesan via WhatsApp</a>
+        <button class="modal-btn-ghost" onclick="closeModalDirect()">Tutup</button>
       </div>
     </div>
   </div>
 
   <!-- Toast Notification -->
-  <div class="toast-msg" id="toastMsg">Terima kasih! Email Anda telah terdaftar.</div>
+  <div class="toast-msg" id="toastMsg" role="status">Terima kasih! Email Anda telah terdaftar.</div>
 
   <script src="script.js"></script>
 </body>
