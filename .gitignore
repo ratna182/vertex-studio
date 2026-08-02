@@ -32,3 +32,6 @@ next-env.d.ts
 
 # graphify
 graphify-out/
+
+.vercel
+.env*

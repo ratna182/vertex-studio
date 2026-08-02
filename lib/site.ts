@@ -4,7 +4,7 @@ export const SITE = {
   tagline: "Studio desain & digital Indonesia",
   description:
     "VERTEX STUDIO membangun website, identitas visual, dan render 3D yang membuat bisnis Anda ditemukan, dipercaya, dan dipilih. Jasa desain grafis, website custom, landing page, 3D render, undangan digital, dan aplikasi kasir POS di Indonesia.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertex-studio-main.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertex-studio-theta.vercel.app",
   whatsapp: "6287889527901",
   whatsappDisplay: "0878-8952-7901",
   email: "vertexstudio@example.com",
