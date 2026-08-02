@@ -1,54 +1,39 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-  useMotionValue,
-  useSpring,
-  useInView,
-  animate,
-} from "motion/react";
+import { motion, useReducedMotion, useMotionValue, useSpring } from "motion/react";
 import { STATS, WA_DEFAULT } from "@/lib/site";
-import { useEffect } from "react";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-function useCountUp(target: number, start: boolean, duration = 1.6) {
-  const [value, setValue] = useState(0);
-  const reduce = useReducedMotion();
-
-  useEffect(() => {
-    if (!start || reduce) {
-      if (reduce) setValue(target);
-      return;
-    }
-    const controls = animate(0, target, {
-      duration,
-      ease: [0.16, 1, 0.3, 1],
-      onUpdate: (v) => setValue(Math.round(v)),
-    });
-    return () => controls.stop();
-  }, [start, target, duration, reduce]);
-
-  return value;
-}
-
-function StatValue({ value, start }: { value: string; start: boolean }) {
-  if (!start || /[–—]/.test(value)) return <>{value}</>;
+function StatValue({ value }: { value: string }) {
   const match = value.match(/^([\d.]+)(.*)$/);
   if (!match) return <>{value}</>;
   const num = parseFloat(match[1]);
   const suffix = match[2];
-  const counted = useCountUp(num, start);
+  const counted = Math.round(num);
   return (
     <>
       {Number.isInteger(num) ? counted : (counted / 10).toFixed(1)}
       {suffix}
     </>
+  );
+}
+
+function WordReveal({ text, delay }: { text: string; delay: number }) {
+  const reduce = useReducedMotion();
+  return (
+    <span className="inline-block overflow-hidden align-bottom">
+      <motion.span
+        className="inline-block"
+        initial={reduce ? false : { y: "110%" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.9, delay, ease: EASE }}
+      >
+        {text}
+      </motion.span>
+    </span>
   );
 }
 
@@ -93,36 +78,9 @@ function MagneticLink({
   );
 }
 
-function WordReveal({ text, delay }: { text: string; delay: number }) {
-  const reduce = useReducedMotion();
-  return (
-    <span
-      className="inline-block overflow-hidden align-bottom"
-      style={{ paddingBottom: "0.08em", marginBottom: "-0.08em" }}
-    >
-      <motion.span
-        className="inline-block"
-        initial={reduce ? false : { y: "110%" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.9, delay, ease: EASE }}
-      >
-        {text}
-      </motion.span>
-    </span>
-  );
-}
-
 export function Hero() {
   const reduce = useReducedMotion();
   const figureRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDListElement>(null);
-  const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
-
-  const { scrollYProgress } = useScroll({
-    target: figureRef,
-    offset: ["start end", "end start"],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   const fade = (delay: number) => ({
     initial: reduce ? false : { opacity: 0, y: 24 },
@@ -188,7 +146,7 @@ export function Hero() {
             >
               <MagneticLink
                 href={WA_DEFAULT}
-                className="group inline-flex items-center bg-ink px-8 py-4 text-sm font-medium text-canvas transition-colors duration-200 hover:bg-accent"
+                className="btn-primary"
               >
                 Konsultasi Gratis
                 <span
@@ -200,7 +158,7 @@ export function Hero() {
               </MagneticLink>
               <a
                 href="#portofolio"
-                className="text-sm font-medium text-ink underline decoration-line decoration-1 underline-offset-4 transition-colors hover:decoration-accent"
+                className="btn-secondary"
               >
                 Lihat Portofolio
               </a>
@@ -211,7 +169,6 @@ export function Hero() {
             <div className="absolute -left-4 -top-4 hidden h-full w-full border border-line md:block" />
             <div ref={figureRef} className="relative aspect-[4/5] overflow-hidden bg-surface">
               <motion.div
-                style={reduce ? undefined : { y: imageY }}
                 className="absolute inset-0 scale-[1.15]"
               >
                 <Image
@@ -224,7 +181,7 @@ export function Hero() {
                   className="aspect-[4/5] w-full object-cover"
                 />
               </motion.div>
-              <motion.div
+              <div
                 aria-hidden="true"
                 className="absolute inset-0 bg-canvas/0"
                 animate={reduce ? undefined : { opacity: [0, 0.35, 0] }}
@@ -238,27 +195,24 @@ export function Hero() {
           </motion.figure>
         </div>
 
-        <motion.dl
-          ref={statsRef}
-          className="mt-20 grid grid-cols-2 gap-y-10 border-t border-line pt-10 md:mt-24 md:grid-cols-4"
-        >
+        <dl className="mt-20 grid grid-cols-2 gap-y-10 border-t border-line pt-10 md:mt-24 md:grid-cols-4">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
               className="pr-6"
               initial={reduce ? false : { opacity: 0, y: 24 }}
-              animate={statsInView ? { opacity: 1, y: 0 } : {}}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: EASE }}
             >
               <dd className="font-display text-4xl font-semibold tracking-[-0.02em] text-ink md:text-5xl">
-                <StatValue value={stat.value} start={statsInView} />
+                <StatValue value={stat.value} />
               </dd>
               <dt className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
                 {stat.label}
               </dt>
             </motion.div>
           ))}
-        </motion.dl>
+        </dl>
       </div>
     </section>
   );

@@ -130,48 +130,55 @@ export function Services() {
           </Reveal>
         </div>
 
-        <ul className="mt-14 border-t border-line">
+        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {SERVICES.map((service, i) => (
-            <li key={service.no} className="border-b border-line">
-              <Reveal delay={Math.min(i * 0.04, 0.2)}>
-                <a
-                  href={waLink(service.message)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative grid grid-cols-1 items-center gap-3 overflow-hidden py-8 transition-colors duration-300 hover:bg-hover md:grid-cols-12 md:gap-8 md:px-6"
-                >
+            <Reveal
+              key={service.no}
+              delay={Math.min(i * 0.04, 0.2)}
+              className="h-full"
+            >
+              <a
+                href={waLink(service.message)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-line bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/3 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+
+                <div className="relative flex items-center gap-4">
+                  <div className="text-muted transition-colors duration-200 group-hover:text-accent">
+                    {React.cloneElement(ICONS[service.title] as React.ReactElement, {
+                      className: "h-5 w-5"
+                    })}
+                  </div>
+                  <span className="font-mono text-xs tracking-[0.08em] text-amber">
+                    {service.no}
+                  </span>
+                </div>
+
+                <h3 className="relative mt-6 font-display text-xl font-bold tracking-[-0.01em] text-ink transition-colors duration-200 group-hover:text-accent">
+                  {service.title}
+                </h3>
+
+                <p className="relative mt-3 flex-1 text-sm leading-relaxed text-muted">
+                  {service.description}
+                </p>
+
+                <div className="relative mt-6 flex items-center justify-between">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted transition-colors duration-200 group-hover:text-accent">
+                    Konsultasi
+                  </span>
                   <span
                     aria-hidden="true"
-                    className="absolute left-0 top-0 h-full w-0 bg-accent/10 transition-all duration-300 ease-out group-hover:w-full"
-                  />
-                  <span className="relative flex items-center gap-5 md:col-span-2">
-                    <span className="text-muted transition-colors duration-300 group-hover:text-accent">
-                      {ICONS[service.title]}
-                    </span>
-                    <span className="font-mono text-sm tracking-[0.08em] text-amber">
-                      {service.no}
-                    </span>
+                    className="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1"
+                  >
+                    {"\u2192"}
                   </span>
-                  <h3 className="relative font-display text-xl font-semibold tracking-[-0.01em] text-ink transition-transform duration-300 ease-out group-hover:translate-x-1 md:col-span-3 md:text-2xl">
-                    {service.title}
-                  </h3>
-                  <p className="relative text-[14px] leading-relaxed text-muted md:col-span-5">
-                    {service.description}
-                  </p>
-                  <span className="relative font-mono text-[11px] uppercase tracking-[0.18em] text-muted transition-colors duration-300 group-hover:text-accent md:col-span-2 md:text-right">
-                    Konsultasi
-                    <span
-                      aria-hidden="true"
-                      className="ml-1 inline-block transition-transform duration-300 ease-out group-hover:translate-x-1"
-                    >
-                      {"\u2192"}
-                    </span>
-                  </span>
-                </a>
-              </Reveal>
-            </li>
+                </div>
+              </a>
+            </Reveal>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

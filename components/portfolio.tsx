@@ -160,37 +160,51 @@ export function Portfolio() {
         </article>
       </Reveal>
 
-      <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-20">
+      <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {PORTFOLIO_ITEMS.map((item, i) => (
           <Reveal
             key={item.title}
-            delay={0.05 + i * 0.08}
-            className={i === 1 ? "md:mt-16" : undefined}
+            delay={0.04 + i * 0.04}
+            className="group"
           >
-            <article className="group border-t border-line pt-10">
-              <ParallaxImage
-                src={item.image}
-                alt={item.alt}
-                sizes="(min-width: 768px) 44vw, 92vw"
-                aspect="aspect-[4/3]"
-              />
-              <div className="mt-6 flex items-baseline justify-between gap-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-                  {item.category}
-                </p>
-                <span
-                  aria-hidden="true"
-                  className="font-mono text-sm text-faint"
-                >
-                  {"0" + (i + 2)}
-                </span>
+            <article className="flex h-full flex-col overflow-hidden rounded-lg border border-line bg-surface transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative overflow-hidden">
+                <ParallaxImage
+                  src={item.image}
+                  alt={item.alt}
+                  sizes="(min-width: 1024px) 22vw, (min-width: 768px) 34vw, 92vw"
+                  aspect="aspect-[4/3]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
               </div>
-              <h3 className="mt-2 font-display text-2xl font-semibold tracking-[-0.01em] text-ink">
-                {item.title}
-              </h3>
-              <p className="mt-3 max-w-[42ch] text-[14px] leading-relaxed text-muted">
-                {item.description}
-              </p>
+
+              <div className="flex flex-1 flex-col p-5">
+                <div className="flex items-baseline justify-between gap-3 mb-3">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted">
+                    {item.category}
+                  </p>
+                  <span className="font-mono text-xs text-muted/70">
+                    {"0" + (i + 2)}
+                  </span>
+                </div>
+
+                <h3 className="font-display text-base font-bold tracking-[-0.01em] text-ink group-hover:text-accent transition-colors duration-200">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">
+                  {item.description}
+                </p>
+
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted group-hover:text-accent transition-colors duration-200">
+                    Lihat Proyek
+                  </span>
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                    {"\u2192"}
+                  </span>
+                </div>
+              </div>
             </article>
           </Reveal>
         ))}
