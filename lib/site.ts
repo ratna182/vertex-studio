@@ -103,7 +103,6 @@ export const PROCESS = [
 ] as const;
 
 export const STATS = [
-  { value: "4.9/5", label: "rating klien" },
   { value: "52+", label: "proyek selesai" },
   { value: "6", label: "bidang layanan" },
   { value: "2\u201310", label: "hari pengerjaan" },
