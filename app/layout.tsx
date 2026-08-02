@@ -72,24 +72,26 @@ export const metadata: Metadata = {
     description: SITE.description,
     url: "/",
     locale: "id_ID",
-    images: [
-      {
-        url: "/images/hero.png",
-        width: 800,
-        height: 600,
-        alt: `${SITE.name} - Studio desain grafis, 3D render & website custom Indonesia`,
-      },
-    ],
+    countryName: "Indonesia",
   },
   twitter: {
     card: "summary_large_image",
     title:
       "Jasa Website, Desain Grafis & 3D Render | VERTEX STUDIO Indonesia",
     description: SITE.description,
-    images: ["/images/hero.png"],
   },
   verification: {
     google: "google749393fc552506bd",
+  },
+  appleWebApp: {
+    capable: true,
+    title: SITE.name,
+    statusBarStyle: "black-translucent",
+  },
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
   },
 };
 
@@ -97,6 +99,7 @@ export const viewport: Viewport = {
   themeColor: "#0a0a0a",
   width: "device-width",
   initialScale: 1,
+  colorScheme: "dark",
 };
 
 export default function RootLayout({

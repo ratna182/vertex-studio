@@ -1,5 +1,14 @@
 import { SITE, SERVICES, FAQS } from "@/lib/site";
 
+const ORG_IMAGES = [
+  `${SITE.url}/images/hero.png`,
+  `${SITE.url}/images/portfolio-skemahq.png`,
+  `${SITE.url}/images/portfolio-pos.png`,
+  `${SITE.url}/images/portfolio-3d.png`,
+  `${SITE.url}/images/portfolio-booth.svg`,
+  `${SITE.url}/images/inspiration.png`,
+];
+
 export function JsonLd() {
   const data = {
     "@context": "https://schema.org",
@@ -11,12 +20,7 @@ export function JsonLd() {
         alternateName: SITE.legalName,
         url: SITE.url,
         logo: `${SITE.url}/images/hero.png`,
-        image: [
-          `${SITE.url}/images/hero.png`,
-          `${SITE.url}/images/portfolio-skemahq.png`,
-          `${SITE.url}/images/portfolio-pos.png`,
-          `${SITE.url}/images/inspiration.png`,
-        ],
+        image: ORG_IMAGES,
         description: SITE.description,
         telephone: `+62${SITE.whatsapp}`,
         email: SITE.email,
@@ -24,6 +28,20 @@ export function JsonLd() {
         currenciesAccepted: "IDR",
         paymentAccepted: "Transfer Bank, E-Wallet (GoPay, OVO, DANA)",
         areaServed: "Indonesia",
+        sameAs: [`https://wa.me/${SITE.whatsapp}`],
+        knowsAbout: [
+          "Desain Grafis",
+          "Branding",
+          "Identitas Visual",
+          "Website Development",
+          "Company Profile Website",
+          "Landing Page",
+          "3D Rendering",
+          "Photorealistic 3D",
+          "Aplikasi Kasir POS",
+          "Undangan Digital",
+          "SEO",
+        ],
         address: {
           "@type": "PostalAddress",
           addressCountry: "ID",
@@ -44,10 +62,9 @@ export function JsonLd() {
             "Thursday",
             "Friday",
             "Saturday",
-            "Sunday",
           ],
-          opens: "08:00",
-          closes: "22:00",
+          opens: "09:00",
+          closes: "16:00",
         },
         contactPoint: {
           "@type": "ContactPoint",
@@ -78,6 +95,7 @@ export function JsonLd() {
               name: s.title,
               description: s.description,
               areaServed: "Indonesia",
+              url: `${SITE.url}/#layanan`,
             },
           })),
         },
@@ -90,6 +108,28 @@ export function JsonLd() {
         description: SITE.description,
         publisher: { "@id": `${SITE.url}/#organization` },
         inLanguage: "id-ID",
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${SITE.url}/#webpage`,
+        url: SITE.url,
+        name: `${SITE.name} - Jasa Website, Desain Grafis & 3D Render Indonesia`,
+        description: SITE.description,
+        inLanguage: "id-ID",
+        isPartOf: { "@id": `${SITE.url}/#website` },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${SITE.url}/images/hero.png`,
+          width: 800,
+          height: 600,
+        },
+        datePublished: "2026-08-01",
+        dateModified: new Date().toISOString().slice(0, 10),
+        breadcrumb: { "@id": `${SITE.url}/#breadcrumb` },
+        mainEntity: [
+          { "@id": `${SITE.url}/#organization` },
+          { "@id": `${SITE.url}/#faq` },
+        ],
       },
       {
         "@type": "FAQPage",

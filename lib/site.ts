@@ -7,10 +7,10 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vertex-studio-theta.vercel.app",
   whatsapp: "6287889527901",
   whatsappDisplay: "0878-8952-7901",
-  email: "vertexstudio@example.com",
+  email: "vertexstudio91@gmail.com",
   city: "Jakarta",
   country: "Indonesia",
-  hours: "08.00\u201322.00 WIB, Senin\u2013Minggu",
+  hours: "09.00\u201316.00 WIB, Senin\u2013Sabtu",
   gaMeasurementId: "G-Q5DKRY2FKE",
   clarityProjectId: "xqtdrcym0k",
 } as const;

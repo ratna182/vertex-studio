@@ -1,3 +1,12 @@
+"use client";
+
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { SITE, SERVICES, WA_DEFAULT } from "@/lib/site";
 
 const NAV_LINKS = [
@@ -9,6 +18,14 @@ const NAV_LINKS = [
 ] as const;
 
 export function Footer() {
+  const reduce = useReducedMotion();
+  const giantRef = useRef<HTMLParagraphElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: giantRef,
+    offset: ["start end", "end end"],
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["6%", "-6%"]);
+
   return (
     <footer className="border-t border-line bg-canvas">
       <div className="mx-auto max-w-[1440px] px-5 pb-10 pt-20 md:px-16 md:pt-28">
@@ -74,12 +91,16 @@ export function Footer() {
           </div>
         </div>
 
-        <p
-          aria-hidden="true"
-          className="mt-20 select-none text-center font-display text-[clamp(2.5rem,8vw,6.5rem)] font-bold italic leading-none tracking-[-0.02em] text-line"
-        >
-          VERTEX/STUDIO
-        </p>
+        <div className="overflow-hidden">
+          <motion.p
+            ref={giantRef}
+            aria-hidden="true"
+            style={reduce ? undefined : { x }}
+            className="mt-20 select-none whitespace-nowrap text-center font-display text-[clamp(2.5rem,8vw,6.5rem)] font-bold italic leading-none tracking-[-0.02em] text-line"
+          >
+            VERTEX/STUDIO
+          </motion.p>
+        </div>
 
         <div className="mt-8 flex flex-col justify-between gap-4 border-t border-line pt-8 md:flex-row md:items-center">
           <p className="text-[12px] text-muted">

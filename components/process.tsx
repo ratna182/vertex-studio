@@ -1,7 +1,42 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useReducedMotion, useInView, animate } from "motion/react";
+import { useEffect, useState } from "react";
 import { PROCESS, STATS } from "@/lib/site";
 import { Reveal } from "@/components/reveal";
 
+function StepNumber({ index, start }: { index: number; start: boolean }) {
+  const [value, setValue] = useState(0);
+  const reduce = useReducedMotion();
+
+  useEffect(() => {
+    if (!start) return;
+    if (reduce) {
+      setValue(index);
+      return;
+    }
+    const controls = animate(0, index, {
+      duration: 0.8,
+      delay: index * 0.15,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => setValue(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [start, index, reduce]);
+
+  return (
+    <span className="font-mono text-sm tracking-[0.08em] text-accent">
+      {String(value).padStart(2, "0")}
+    </span>
+  );
+}
+
 export function Process() {
+  const reduce = useReducedMotion();
+  const stepsRef = useRef<HTMLOListElement>(null);
+  const stepsInView = useInView(stepsRef, { once: true, amount: 0.3 });
+
   return (
     <section
       id="proses"
@@ -21,20 +56,29 @@ export function Process() {
           </h2>
         </Reveal>
 
-        <ol className="mt-14 grid grid-cols-1 gap-px border-t border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <ol
+          ref={stepsRef}
+          className="mt-14 grid grid-cols-1 gap-px border-t border-line bg-line sm:grid-cols-2 lg:grid-cols-4"
+        >
           {PROCESS.map((step, i) => (
             <li key={step.no} className="bg-canvas p-8 md:p-10">
-              <Reveal delay={i * 0.06}>
-                <span className="font-mono text-sm tracking-[0.08em] text-accent">
-                  {step.no}
-                </span>
+              <motion.div
+                initial={reduce ? false : { opacity: 0, y: 32 }}
+                animate={stepsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.7,
+                  delay: i * 0.12,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                <StepNumber index={i + 1} start={stepsInView} />
                 <h3 className="mt-8 font-display text-lg font-semibold tracking-[-0.01em] text-ink">
                   {step.title}
                 </h3>
                 <p className="mt-3 max-w-[34ch] text-[14px] leading-relaxed text-muted">
                   {step.description}
                 </p>
-              </Reveal>
+              </motion.div>
             </li>
           ))}
         </ol>

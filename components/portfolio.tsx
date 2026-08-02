@@ -1,4 +1,13 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { Reveal } from "@/components/reveal";
 
 const PORTFOLIO_ITEMS = [
@@ -19,6 +28,49 @@ const PORTFOLIO_ITEMS = [
     alt: "Render 3D booth pameran dan visualisasi produk photorealistic",
   },
 ] as const;
+
+function ParallaxImage({
+  src,
+  alt,
+  sizes,
+  aspect,
+}: {
+  src: string;
+  alt: string;
+  sizes: string;
+  aspect: string;
+}) {
+  const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.12, 1.18, 1.12]);
+
+  return (
+    <div ref={ref} className={`relative overflow-hidden bg-surface ${aspect}`}>
+      <motion.div
+        style={reduce ? undefined : { y, scale }}
+        className="absolute inset-0"
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={800}
+          height={500}
+          sizes={sizes}
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        />
+      </motion.div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 border border-line/0 transition-colors duration-300 group-hover:border-accent/40"
+      />
+    </div>
+  );
+}
 
 export function Portfolio() {
   return (
@@ -48,24 +100,20 @@ export function Portfolio() {
       </div>
 
       <Reveal delay={0.06}>
-        <article className="mt-14 grid grid-cols-1 gap-10 border-t border-line pt-12 lg:grid-cols-12 lg:gap-14">
+        <article className="group mt-14 grid grid-cols-1 gap-10 border-t border-line pt-12 lg:grid-cols-12 lg:gap-14">
           <a
             href="https://skemahq-website.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block lg:col-span-7"
+            className="block lg:col-span-7"
             aria-label="Buka website Skema HQ yang berjalan live"
           >
-            <div className="relative overflow-hidden bg-surface">
-              <Image
-                src="/images/portfolio-skemahq.png"
-                alt="Tampilan website Skema HQ, platform web agensi digital yang dibangun dengan Next.js"
-                width={800}
-                height={500}
-                sizes="(min-width: 1024px) 58vw, 92vw"
-                className="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-            </div>
+            <ParallaxImage
+              src="/images/portfolio-skemahq.png"
+              alt="Tampilan website Skema HQ, platform web agensi digital yang dibangun dengan Next.js"
+              sizes="(min-width: 1024px) 58vw, 92vw"
+              aspect="aspect-[16/10]"
+            />
           </a>
           <div className="flex flex-col justify-between lg:col-span-5 lg:py-2">
             <div>
@@ -119,22 +167,21 @@ export function Portfolio() {
             delay={0.05 + i * 0.08}
             className={i === 1 ? "md:mt-16" : undefined}
           >
-            <article className="border-t border-line pt-10">
-              <div className="group relative overflow-hidden bg-surface">
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  width={400}
-                  height={300}
-                  sizes="(min-width: 768px) 44vw, 92vw"
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                />
-              </div>
+            <article className="group border-t border-line pt-10">
+              <ParallaxImage
+                src={item.image}
+                alt={item.alt}
+                sizes="(min-width: 768px) 44vw, 92vw"
+                aspect="aspect-[4/3]"
+              />
               <div className="mt-6 flex items-baseline justify-between gap-4">
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
                   {item.category}
                 </p>
-                <span aria-hidden="true" className="font-mono text-sm text-faint">
+                <span
+                  aria-hidden="true"
+                  className="font-mono text-sm text-faint"
+                >
                   {"0" + (i + 2)}
                 </span>
               </div>
