@@ -378,28 +378,6 @@ img { max-width: 100%; display: block; }
   flex: 0 0 auto;
 }
 
-.nav-cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 22px;
-  border-radius: var(--r-pill);
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 0.84rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  transition: transform var(--dur-fast) var(--ease-out), background var(--dur-micro) ease,
-    border-color var(--dur-micro) ease, color var(--dur-micro) ease, box-shadow var(--dur-base) var(--ease-out);
-}
-
-.nav-cta:hover {
-  background: var(--gold);
-  color: var(--bg);
-  transform: translateY(-1px);
-  box-shadow: var(--glow-gold);
-}
-
 /* mobile toggle */
 .nav-toggle {
   display: none;
@@ -453,19 +431,6 @@ img { max-width: 100%; display: block; }
   transition: color 0.25s ease;
 }
 .nav-mobile a:hover { color: var(--gold); }
-
-.nav-mobile .nav-mobile-cta {
-  margin-top: 14px;
-  display: inline-flex;
-  justify-content: center;
-  padding: 13px 20px;
-  border: 1px solid var(--gold);
-  border-radius: var(--r-pill);
-  color: var(--gold);
-  text-align: center;
-  border-bottom: none;
-}
-.nav-mobile .nav-mobile-cta:hover { background: var(--gold); color: var(--bg); }
 
 /* ============================================================
    HERO
