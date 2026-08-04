@@ -1,99 +1,77 @@
 // Vertex Studio Service Content Details
 const servicesData = {
   services: {
-    title: "6 Layanan Utama VERTEX STUDIO",
+    title: "4 Layanan Utama VERTEX STUDIO",
     body: `
-      <p>VERTEX STUDIO menyediakan 6 layanan visual & digital arsitektural pilihan untuk memperkuat daya saing bisnis Anda:</p>
+      <p>VERTEX STUDIO menyediakan 4 layanan visual & digital arsitektural pilihan untuk memperkuat daya saing bisnis Anda:</p>
       <ul>
-        <li><strong>01. Desain Grafis & Branding:</strong> Logo vector, identitas brand, kemasan produk & media promosi.</li>
-        <li><strong>02. Desain 3D & Render Visual:</strong> Product render photorealistic, interior/eksterior & booth exhibition.</li>
-        <li><strong>03. Desain Web Custom:</strong> Website company profile, katalog produk, ultra-fast & SEO friendly.</li>
-        <li><strong>04. Desain Landing Page:</strong> Single page promosi high-converting terintegrasi WhatsApp.</li>
-        <li><strong>05. Undangan Digital:</strong> Web undangan interaktif dengan RSVP, galeri foto & audio player.</li>
-        <li><strong>06. Aplikasi Kasir (POS):</strong> Sistem kasir modern berbasis web, manajemen stok & struk WA.</li>
+        <li><strong>01. Design 3D & Render Booth/Interior:</strong> Render produk photorealistic, interior, eksterior, hingga booth pameran.</li>
+        <li><strong>02. Design Landing Page FULL SEO:</strong> Halaman promosi tunggal berkonversi tinggi, terintegrasi WhatsApp, dioptimalkan untuk SEO.</li>
+        <li><strong>03. Design Web Portofolio FULL SEO:</strong> Website portofolio profesional multi-halaman, cepat, responsif, dan dioptimalkan untuk SEO.</li>
+        <li><strong>04. Design Grafis:</strong> Logo vector, identitas brand, packaging produk, hingga media promosi yang konsisten.</li>
       </ul>
     `,
     waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20layanan%20kalian."
   },
   service1: {
-    title: "01. Desain Grafis & Branding",
+    title: "01. Design 3D & Render Booth/Interior",
     body: `
-      <p>Membangun identitas visual berkelas tinggi untuk memperkuat brand equity bisnis Anda.</p>
+      <p>Render produk photorealistic, interior, eksterior, hingga booth pameran dengan visualisasi yang menakjubkan.</p>
       <ul>
-        <li>✓ Logo Vector High-Resolution & Source File</li>
-        <li>✓ Brand Guideline & Color Palette</li>
-        <li>✓ Desain Feed Instagram & Banner Promosi</li>
-        <li>✓ Packaging & Label Produk Eksklusif</li>
+        <li>✓ Desain 3D Interior & Eksterior</li>
+        <li>✓ Render Booth Pameran</li>
+        <li>✓ Visualisasi Arsitektur</li>
+        <li>✓ Render Produk</li>
+        <li>✓ Photorealistic Visualization</li>
       </ul>
     `,
-    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Desain%20Grafis%20%26%20Branding."
+    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Design%203D%20%26%20Render%20Booth%2FInterior."
   },
   service2: {
-    title: "02. Desain 3D & Render Visual",
+    title: "02. Design Landing Page FULL SEO",
     body: `
-      <p>Visualisasi 3D photorealistic tingkat tinggi untuk presentasi produk dan arsitektur.</p>
+      <p>Halaman promosi tunggal berkonversi tinggi, terintegrasi WhatsApp, dioptimalkan untuk SEO.</p>
       <ul>
-        <li>✓ 3D Product Rendering Photorealism</li>
-        <li>✓ Booth Exhibition & Display Stand Design</li>
-        <li>✓ Visualisasi Interior & Arsitektural</li>
-        <li>✓ 3D Modeling High-Detail (OBJ/FBX/GLTF)</li>
+        <li>✓ Desain Responsif</li>
+        <li>✓ Optimasi SEO</li>
+        <li>✓ Integrasi WhatsApp</li>
+        <li>✓ Halaman Berkonversi Tinggi</li>
+        <li>✓ Analisis Konversi</li>
       </ul>
     `,
-    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Desain%203D%20%26%20Render."
+    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Design%20Landing%20Page%20FULL%20SEO."
   },
   service3: {
-    title: "03. Desain Web Custom",
+    title: "03. Design Web Portofolio FULL SEO",
     body: `
-      <p>Website perusahaan multi-halaman berkelas tinggi dengan arsitektur web modern.</p>
+      <p>Website portofolio profesional multi-halaman, cepat, responsif, dan dioptimalkan untuk SEO.</p>
       <ul>
-        <li>✓ Website Company Profile & Business Agency</li>
-        <li>✓ Web Katalog Produk & Portofolio Interaktif</li>
-        <li>✓ Responsif Sempurna di HP, Tablet & PC</li>
-        <li>✓ Bebas Biaya Server & Optimasi Kecepatan</li>
+        <li>✓ Desain Portofolio Kustom</li>
+        <li>✓ Optimasi SEO Lanjutan</li>
+        <li>✓ Multi-halaman</li>
+        <li>✓ Kinerja Cepat</li>
+        <li>✓ Responsif di Semua Perangkat</li>
       </ul>
     `,
-    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Desain%20Web%20Custom."
+    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Design%20Web%20Portofolio%20FULL%20SEO."
   },
   service4: {
-    title: "04. Desain Landing Page",
+    title: "04. Design Grafis",
     body: `
-      <p>Halaman promosi tunggal berkonversi tinggi untuk memaksimalkan ROI kampanye iklan Anda.</p>
+      <p>Logo vector, identitas brand, packaging produk, hingga media promosi yang konsisten.</p>
       <ul>
-        <li>✓ High-Converting Copywriting & Layout</li>
-        <li>✓ Integrasi Tombol Chat WhatsApp Direct</li>
-        <li>✓ Pengerjaan Cepat (1-2 Hari Kerja)</li>
-        <li>✓ Tanpa Biaya Server Bulanan</li>
+        <li>✓ Desain Logo Vector</li>
+        <li>✓ Identitas Brand</li>
+        <li>✓ Packaging Produk</li>
+        <li>✓ Media Promosi</li>
+        <li>✓ Sistem Brand yang Konsisten</li>
       </ul>
     `,
-    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Desain%20Landing%20Page."
-  },
-  service5: {
-    title: "05. Undangan Digital",
-    body: `
-      <p>Web undangan digital modern untuk acara pernikahan, pertunangan, dan event eksklusif.</p>
-      <ul>
-        <li>✓ Fitur Konfirmasi RSVP & Ucapan Selamat</li>
-        <li>✓ Navigasi Google Maps & Galeri Foto HD</li>
-        <li>✓ Background Music Custom & Countdown Timer</li>
-        <li>✓ Custom Nama Tamu Tanpa Batas</li>
-      </ul>
-    `,
-    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Undangan%20Digital."
-  },
-  service6: {
-    title: "06. Aplikasi Kasir (POS) Modern",
-    body: `
-      <p>Sistem Kasir Point-of-Sale (POS) berbasis web ringan untuk operasional toko & cafe.</p>
-      <ul>
-        <li>✓ Manajemen Produk, Kategori & Stok</li>
-        <li>✓ Pencatatan Transaksi & Laporan Penjualan</li>
-        <li>✓ Fitur Cetak Struk / Kirim Struk Digital via WhatsApp</li>
-        <li>✓ Tanpa Perlu Install Aplikasi Rumit (Cloud Web)</li>
-      </ul>
-    `,
-    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Aplikasi%20Kasir%20POS."
+    waText: "Halo%20VERTEX%20STUDIO,%20saya%20tertarik%20dengan%20Jasa%20Design%20Grafis."
   }
 };
+
+let lastFocused = null;
 
 // Open Modal Dialog
 function openModal(type) {
@@ -108,17 +86,25 @@ function openModal(type) {
   body.innerHTML = data.body;
   waBtn.href = `https://wa.me/6287889527901?text=${data.waText}`;
 
+  lastFocused = document.activeElement;
   modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('modalWaBtn').focus();
 }
 
 function closeModal(event) {
   if (event.target.id === 'infoModal') {
-    document.getElementById('infoModal').classList.remove('active');
+    closeModalDirect();
   }
 }
 
 function closeModalDirect() {
-  document.getElementById('infoModal').classList.remove('active');
+  const modal = document.getElementById('infoModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  if (lastFocused && typeof lastFocused.focus === 'function') {
+    lastFocused.focus();
+  }
 }
 
 // Newsletter Form Submission
@@ -141,58 +127,93 @@ function handleSubscribe(event) {
   }
 }
 
-// --- LUXURY ANIMATIONS & INTERACTION ENHANCEMENTS ---
+// ============================================================
+// ANIMATION & INTERACTION LAYER (transform + opacity only)
+// ============================================================
+(function () {
+  'use strict';
 
-// 1. Reveal On Scroll Observer
-document.addEventListener('DOMContentLoaded', () => {
-  const revealElements = document.querySelectorAll('.reveal');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
+  /* ---- Navbar scrolled state (class toggle only) ---- */
+  const navbar = document.getElementById('siteNav');
+  const setScrolled = () => navbar.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', setScrolled, { passive: true });
+  setScrolled();
+
+  /* ---- Mobile nav toggle ---- */
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+
+  if (navToggle && navMobile) {
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      navToggle.setAttribute('aria-label', open ? 'Buka menu' : 'Tutup menu');
+      navMobile.classList.toggle('open', !open);
+    });
+
+    navMobile.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navMobile.classList.remove('open');
       }
     });
-  }, { threshold: 0.15 });
+  }
 
-  revealElements.forEach(el => observer.observe(el));
+  /* ---- Reveal on scroll + staggered entrances ---- */
+  const revealEls = document.querySelectorAll('.reveal');
 
-  // 2. Navbar Background Scroll State
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+  function activateAll() {
+    revealEls.forEach((el) => el.classList.add('active'));
+  }
+
+  if ('IntersectionObserver' in window && !reducedMotion) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const group = el.closest('[data-stagger]');
+          if (group) {
+            const items = group.querySelectorAll('.reveal');
+            const index = Array.prototype.indexOf.call(items, el);
+            el.style.transitionDelay = `${Math.min(index * 70, 420)}ms`;
+          }
+          el.classList.add('active');
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    activateAll();
+  }
+
+  /* ---- Hero glow parallax (5-10px, rAF-throttled, transform only) ---- */
+  const glow = document.querySelector('.hero-glow');
+  if (glow && !reducedMotion && window.matchMedia('(min-width: 768px)').matches) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const y = Math.min(window.scrollY * 0.045, 12);
+          glow.style.transform = `translate3d(0, ${y}px, 0)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ---- Keyboard ESC closes modal ---- */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModalDirect();
+      if (navMobile && navMobile.classList.contains('open')) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navMobile.classList.remove('open');
+      }
     }
   });
-
-  // 3. 3D Tilt Effect on Image Wrappers
-  const imageWrappers = document.querySelectorAll('.image-wrapper');
-  imageWrappers.forEach(wrapper => {
-    wrapper.addEventListener('mousemove', (e) => {
-      const rect = wrapper.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -12;
-      const rotateY = ((x - centerX) / centerX) * 12;
-
-      wrapper.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-    });
-
-    wrapper.addEventListener('mouseleave', () => {
-      wrapper.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-    });
-  });
-});
-
-// Keyboard ESC to close modal
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeModalDirect();
-  }
-});
+})();
