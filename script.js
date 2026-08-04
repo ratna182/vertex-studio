@@ -151,26 +151,6 @@ function handleSubscribe(event) {
   window.addEventListener('scroll', setScrolled, { passive: true });
   setScrolled();
 
-  /* ---- Mobile nav toggle ---- */
-  const navToggle = document.getElementById('navToggle');
-  const navMobile = document.getElementById('navMobile');
-
-  if (navToggle && navMobile) {
-    navToggle.addEventListener('click', () => {
-      const open = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!open));
-      navToggle.setAttribute('aria-label', open ? 'Buka menu' : 'Tutup menu');
-      navMobile.classList.toggle('open', !open);
-    });
-
-    navMobile.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navMobile.classList.remove('open');
-      }
-    });
-  }
-
   /* ---- Reveal on scroll + staggered entrances ---- */
   const revealEls = document.querySelectorAll('.reveal');
 
@@ -225,10 +205,6 @@ function handleSubscribe(event) {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeModalDirect();
-      if (navMobile && navMobile.classList.contains('open')) {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navMobile.classList.remove('open');
-      }
     }
   });
 })();
