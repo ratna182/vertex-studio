@@ -177,9 +177,11 @@ function handleSubscribe(event) {
           if (group) {
             const items = group.querySelectorAll('.reveal');
             const index = Array.prototype.indexOf.call(items, el);
-            el.style.transitionDelay = `${Math.min(index * 70, 420)}ms`;
+            el.style.transitionDelay = `${Math.min(index * 60, 360)}ms`;
           }
           el.classList.add('active');
+          // release GPU layer after the entrance completes
+          setTimeout(() => { el.style.willChange = 'auto'; }, 700);
           observer.unobserve(el);
         }
       });
@@ -190,15 +192,18 @@ function handleSubscribe(event) {
     activateAll();
   }
 
-  /* ---- Hero glow parallax (5-10px, rAF-throttled, transform only) ---- */
-  const glow = document.querySelector('.hero-glow');
-  if (glow && !reducedMotion && window.matchMedia('(min-width: 768px)').matches) {
+  /* ---- Subtle parallax for background decorations (5-15px, transform only) ---- */
+  const parallaxEls = document.querySelectorAll('[data-parallax]');
+  if (parallaxEls.length && !reducedMotion && window.matchMedia('(min-width: 768px)').matches) {
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const y = Math.min(window.scrollY * 0.045, 12);
-          glow.style.transform = `translate3d(0, ${y}px, 0)`;
+          parallaxEls.forEach((el) => {
+            const speed = parseFloat(el.dataset.parallax) || 0.03;
+            const y = Math.max(-15, Math.min(15, window.scrollY * speed));
+            el.style.transform = `translate3d(0, ${y}px, 0)`;
+          });
           ticking = false;
         });
         ticking = true;

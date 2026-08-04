@@ -119,6 +119,7 @@
         "https://wa.me/6287889527901"
       ],
       "slogan": "Digital Architecture & Creative Solutions",
+      "areaServed": "Indonesia",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+6287889527901",
@@ -134,6 +135,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "@id": "https://vertex-studio-theta.vercel.app/#service-3d",
               "name": "Design 3D & Render Booth/Interior"
             }
           },
@@ -141,6 +143,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "@id": "https://vertex-studio-theta.vercel.app/#service-landingpage",
               "name": "Design Landing Page FULL SEO"
             }
           },
@@ -148,6 +151,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "@id": "https://vertex-studio-theta.vercel.app/#service-webportfolio",
               "name": "Design Web Portofolio FULL SEO"
             }
           },
@@ -155,6 +159,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "@id": "https://vertex-studio-theta.vercel.app/#service-design",
               "name": "Design Grafis"
             }
           }
@@ -163,7 +168,7 @@
     },
 
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://vertex-studio-theta.vercel.app/#localbusiness",
       "name": "Vertex Studio",
       "image": "https://vertex-studio-theta.vercel.app/og-image.jpg",
@@ -174,7 +179,24 @@
         "@type": "PostalAddress",
         "addressCountry": "ID"
       },
-      "areaServed": "Indonesia",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Jakarta"
+        },
+        {
+          "@type": "City",
+          "name": "Bekasi"
+        },
+        {
+          "@type": "City",
+          "name": "Bogor"
+        },
+        {
+          "@type": "Country",
+          "name": "Indonesia"
+        }
+      ],
       "openingHours": "Mo-Su 08:00-22:00",
       "sameAs": [
         "https://wa.me/6287889527901"
@@ -211,14 +233,96 @@
       "@id": "https://vertex-studio-theta.vercel.app/#webpage",
       "url": "https://vertex-studio-theta.vercel.app/",
       "name": "Vertex Studio | Design 3D Render Booth/Interior, Landing Page & Web Portofolio FULL SEO",
+      "description": "Vertex Studio menyediakan jasa Design 3D & Render Booth/Interior, Design Landing Page FULL SEO, Design Web Portofolio FULL SEO, dan Design Grafis dengan hasil profesional.",
       "isPartOf": {
         "@id": "https://vertex-studio-theta.vercel.app/#website"
       },
       "about": {
         "@id": "https://vertex-studio-theta.vercel.app/#organization"
       },
+      "primaryImageOfPage": {
+        "@id": "https://vertex-studio-theta.vercel.app/#image-og"
+      },
+      "breadcrumb": {
+        "@id": "https://vertex-studio-theta.vercel.app/#breadcrumb"
+      },
       "inLanguage": "id-ID",
-      "dateModified": "2026-07-31"
+      "datePublished": "2026-07-31",
+      "dateModified": "2026-08-04"
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vertex-studio-theta.vercel.app/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://vertex-studio-theta.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Layanan",
+          "item": "https://vertex-studio-theta.vercel.app/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Portofolio",
+          "item": "https://vertex-studio-theta.vercel.app/#portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Kontak",
+          "item": "https://vertex-studio-theta.vercel.app/#contact"
+        }
+      ]
+    },
+
+    {
+      "@type": "ImageObject",
+      "@id": "https://vertex-studio-theta.vercel.app/#image-og",
+      "url": "https://vertex-studio-theta.vercel.app/og-image.jpg",
+      "width": 1200,
+      "height": 630,
+      "caption": "Vertex Studio"
+    },
+
+    {
+      "@type": "ImageObject",
+      "@id": "https://vertex-studio-theta.vercel.app/#image-skemahq",
+      "url": "https://vertex-studio-theta.vercel.app/images/portfolio-skemahq.webp",
+      "width": 1024,
+      "height": 1024,
+      "caption": "Website Skema HQ — Digital Engineering & Agency Platform oleh Vertex Studio"
+    },
+
+    {
+      "@type": "CreativeWork",
+      "@id": "https://vertex-studio-theta.vercel.app/#work-skemahq",
+      "name": "Skema HQ — Digital Engineering & Agency Platform",
+      "url": "https://skemahq-website.vercel.app/",
+      "creator": {
+        "@id": "https://vertex-studio-theta.vercel.app/#organization"
+      },
+      "image": {
+        "@id": "https://vertex-studio-theta.vercel.app/#image-skemahq"
+      },
+      "about": "Platform web agency berarsitektur modern dengan performa cepat dan desain visual elegan."
+    },
+
+    {
+      "@type": "3DModel",
+      "@id": "https://vertex-studio-theta.vercel.app/#work-booth",
+      "name": "3D Exhibition & Booth Stand Render",
+      "creator": {
+        "@id": "https://vertex-studio-theta.vercel.app/#organization"
+      },
+      "image": "https://vertex-studio-theta.vercel.app/images/portfolio-booth.svg",
+      "about": "Visualisasi 3D photorealistic booth pameran, display panggung, dan arsitektur event."
     },
 
     {
@@ -228,8 +332,25 @@
       "provider": {
         "@id": "https://vertex-studio-theta.vercel.app/#organization"
       },
-      "areaServed": "Indonesia",
-      "description": "Design 3D & Render Booth/Interior: visualisasi 3D photorealistic interior, eksterior, booth exhibition dan produk."
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Jakarta"
+        },
+        {
+          "@type": "City",
+          "name": "Bekasi"
+        },
+        {
+          "@type": "City",
+          "name": "Bogor"
+        },
+        {
+          "@type": "Country",
+          "name": "Indonesia"
+        }
+      ],
+      "description": "Design 3D & Render Booth/Interior: visualisasi 3D photorealistic interior, eksterior, booth exhibition dan produk untuk Jakarta, Bekasi, Bogor dan seluruh Indonesia."
     },
 
     {
@@ -240,7 +361,7 @@
         "@id": "https://vertex-studio-theta.vercel.app/#organization"
       },
       "areaServed": "Indonesia",
-      "description": "Design landing page FULL SEO, halaman promosi tunggal berkonversi tinggi terintegrasi WhatsApp."
+      "description": "Design landing page FULL SEO, halaman promosi tunggal berkonversi tinggi terintegrasi WhatsApp untuk bisnis di seluruh Indonesia."
     },
 
     {
@@ -251,7 +372,7 @@
         "@id": "https://vertex-studio-theta.vercel.app/#organization"
       },
       "areaServed": "Indonesia",
-      "description": "Design web portofolio FULL SEO, website multi-halaman cepat, responsif dan dioptimalkan untuk mesin pencari."
+      "description": "Design web portofolio FULL SEO, website multi-halaman cepat, responsif dan dioptimalkan untuk mesin pencari bagi bisnis di seluruh Indonesia."
     },
 
     {
@@ -362,7 +483,7 @@
   <!-- Hero -->
   <section class="hero" id="about">
     <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-glow" data-parallax="0.045" aria-hidden="true"></div>
     <div class="hero-veil" aria-hidden="true"></div>
 
     <div class="container hero-inner">
@@ -376,8 +497,8 @@
         <h1 class="hero-title">Arsitektur Digital untuk Bisnis yang <em>Berkembang</em></h1>
         <span class="hero-script">Crafting Digital Excellence</span>
         <p class="hero-sub">
-          VERTEX STUDIO membantu bisnis di Indonesia tampil lebih profesional — lewat desain grafis,
-          visualisasi 3D, landing page, dan web portofolio.
+          VERTEX STUDIO membantu bisnis di Jakarta, Bekasi, Bogor, dan seluruh Indonesia tampil lebih
+          profesional — lewat desain grafis, visualisasi 3D, landing page, dan web portofolio.
           Semua dikerjakan dengan presisi arsitektural dan pengalaman digital yang intuitif.
         </p>
         <div class="hero-actions">
@@ -399,7 +520,7 @@
       <div class="section-head reveal">
         <span class="sec-label">Layanan Kami</span>
         <h2 class="section-title">Solusi Digital dalam <em>Satu Studio</em></h2>
-        <p class="section-desc">Empat layanan yang saling melengkapi untuk kebutuhan visual dan digital bisnis Anda.</p>
+        <p class="section-desc">Empat layanan yang saling melengkapi untuk kebutuhan visual dan digital bisnis Anda — melayani Jakarta, Bekasi, Bogor, dan seluruh Indonesia.</p>
       </div>
 
       <div class="services-grid" data-stagger>
@@ -415,7 +536,7 @@
             </span>
           </div>
           <h3>Desain 3D &amp; Render Booth/Interior</h3>
-          <p>Render produk photorealistic, interior, eksterior, hingga booth pameran.</p>
+          <p>Render produk photorealistic, interior, eksterior, hingga booth pameran untuk Jakarta, Bekasi, Bogor &amp; seluruh Indonesia.</p>
           <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
@@ -480,6 +601,7 @@
 
   <!-- Portfolio -->
   <section class="section portfolio-section" id="portfolio">
+    <div class="bg-orb bg-orb--gold" data-parallax="0.03" aria-hidden="true"></div>
     <div class="container">
       <div class="section-head reveal">
         <span class="sec-label">Portofolio</span>
@@ -541,7 +663,7 @@
         <ul class="why-points">
           <li>Konsultasi gratis sebelum proyek dimulai</li>
           <li>Proses transparan dari konsep hingga serah terima</li>
-          <li>Melayani seluruh Indonesia, dikerjakan online</li>
+          <li>Melayani Jakarta, Bekasi, Bogor, dan seluruh Indonesia, dikerjakan online</li>
         </ul>
       </div>
 
@@ -576,6 +698,7 @@
 
   <!-- Contact -->
   <section class="section contact-section" id="contact">
+    <div class="bg-orb bg-orb--blue" data-parallax="-0.025" aria-hidden="true"></div>
     <div class="container">
       <div class="section-head reveal">
         <span class="sec-label">Mulai Proyek</span>
