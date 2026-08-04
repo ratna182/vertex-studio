@@ -524,7 +524,7 @@
       </div>
 
       <div class="services-grid" data-stagger>
-        <div class="service-box glass reveal" onclick="openModal('service1')">
+        <div class="service-box glass reveal" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('service1')">
           <div class="service-top">
             <span class="box-num">01</span>
             <span class="box-icon">
@@ -540,7 +540,7 @@
           <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
-        <div class="service-box glass reveal" onclick="openModal('service2')">
+        <div class="service-box glass reveal" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('service2')">
           <div class="service-top">
             <span class="box-num">02</span>
             <span class="box-icon">
@@ -556,7 +556,7 @@
           <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
-        <div class="service-box glass reveal" onclick="openModal('service3')">
+        <div class="service-box glass reveal" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('service3')">
           <div class="service-top">
             <span class="box-num">03</span>
             <span class="box-icon">
@@ -574,7 +574,7 @@
           <span class="box-link">Detail Layanan <span class="box-arrow">→</span></span>
         </div>
 
-        <div class="service-box glass reveal" onclick="openModal('service4')">
+        <div class="service-box glass reveal" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('service4')">
           <div class="service-top">
             <span class="box-num">04</span>
             <span class="box-icon">
@@ -772,7 +772,7 @@
 
   <!-- Modal Component -->
   <div class="modal-backdrop" id="infoModal" onclick="closeModal(event)">
-    <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModalDirect()" aria-label="Tutup">&times;</button>
       <h3 class="modal-title" id="modalTitle">Layanan VERTEX STUDIO</h3>
       <div class="modal-body" id="modalBody"></div>

@@ -107,6 +107,16 @@ function closeModalDirect() {
   }
 }
 
+// Keyboard access: Enter/Space on a service card opens its modal
+document.querySelectorAll('.service-box').forEach((box) => {
+  box.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      box.click();
+    }
+  });
+});
+
 // Newsletter Form Submission
 function handleSubscribe(event) {
   event.preventDefault();
@@ -201,7 +211,7 @@ function handleSubscribe(event) {
         window.requestAnimationFrame(() => {
           parallaxEls.forEach((el) => {
             const speed = parseFloat(el.dataset.parallax) || 0.03;
-            const y = Math.max(-15, Math.min(15, window.scrollY * speed));
+            const y = Math.max(-10, Math.min(10, window.scrollY * speed));
             el.style.transform = `translate3d(0, ${y}px, 0)`;
           });
           ticking = false;
