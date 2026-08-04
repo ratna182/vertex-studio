@@ -1,15 +1,15 @@
 {
     "name": "Vertex Studio",
     "short_name": "Vertex",
-    "description": "Vertex Studio — jasa website custom, landing page, aplikasi kasir POS, desain 3D rendering, desain grafis, dan undangan digital.",
+    "description": "Vertex Studio — jasa Design 3D & Render Booth/Interior, Landing Page FULL SEO, Web Portofolio FULL SEO, dan Design Grafis.",
     "lang": "id",
     "categories": ["business", "design", "technology"],
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
     "orientation": "portrait-primary",
-    "background_color": "#0B0F1A",
-    "theme_color": "#0B0F1A",
+    "background_color": "#0b132b",
+    "theme_color": "#0b132b",
     "icons": [
         {
             "src": "/favicon-192.png",
