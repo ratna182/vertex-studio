@@ -273,9 +273,7 @@ img { max-width: 100%; display: block; }
 .navbar.scrolled .nav-inner { height: 62px; }
 
 .navbar.scrolled {
-  background: rgba(11, 15, 26, 0.82);
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
-  backdrop-filter: blur(18px) saturate(1.2);
+  background: var(--bg);
   border-bottom-color: var(--line-soft);
   box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.7);
 }
