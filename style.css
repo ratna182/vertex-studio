@@ -40,6 +40,12 @@
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+
+  /* motion scale — Apple/Linear-inspired, transform+opacity only */
+  --dur-micro: 0.2s;
+  --dur-fast: 0.3s;
+  --dur-base: 0.45s;
+  --dur-slow: 0.6s;
 }
 
 * {
@@ -202,8 +208,8 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
   border: 1px solid transparent;
   white-space: nowrap;
-  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out),
-    background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out),
+    background var(--dur-micro) ease, border-color var(--dur-micro) ease, color var(--dur-micro) ease;
   will-change: transform;
 }
 
@@ -241,7 +247,7 @@ img { max-width: 100%; display: block; }
 .btn-arrow {
   width: 15px;
   height: 15px;
-  transition: transform 0.35s var(--ease-out);
+  transition: transform var(--dur-fast) var(--ease-out);
 }
 .btn-gold:hover .btn-arrow,
 .btn-gold-outline:hover .btn-arrow {
@@ -274,7 +280,7 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   z-index: 100;
-  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: background var(--dur-base) ease, border-color var(--dur-base) ease, box-shadow var(--dur-base) ease;
   border-bottom: 1px solid transparent;
 }
 
@@ -382,7 +388,8 @@ img { max-width: 100%; display: block; }
   font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  transition: all 0.3s var(--ease-out);
+  transition: transform var(--dur-fast) var(--ease-out), background var(--dur-micro) ease,
+    border-color var(--dur-micro) ease, color var(--dur-micro) ease, box-shadow var(--dur-base) var(--ease-out);
 }
 
 .nav-cta:hover {
@@ -602,7 +609,7 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy > * {
     opacity: 0;
-    animation: heroFade 0.6s var(--ease-out) forwards;
+    animation: heroFade var(--dur-slow) var(--ease-out) forwards;
   }
   .hero-eyebrow { animation-delay: 0.05s; }
   .hero-title   { animation-delay: 0.12s; }
@@ -613,7 +620,7 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes heroFade {
-  from { opacity: 0; transform: translateY(22px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -639,10 +646,12 @@ img { max-width: 100%; display: block; }
   gap: 14px;
   min-height: 300px;
   overflow: hidden;
-  transition: transform 0.45s var(--ease-out), border-color 0.4s ease,
-    box-shadow 0.45s var(--ease-out), background 0.4s ease;
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-fast) ease,
+    box-shadow var(--dur-base) var(--ease-out), background var(--dur-fast) ease;
   will-change: transform;
 }
+
+.service-box:active { transform: scale(0.985); }
 
 .service-box::before {
   content: '';
@@ -651,7 +660,7 @@ img { max-width: 100%; display: block; }
   border-radius: inherit;
   background: radial-gradient(320px 160px at 50% -20%, rgba(201, 168, 108, 0.14), transparent 70%);
   opacity: 0;
-  transition: opacity 0.45s ease;
+  transition: opacity var(--dur-base) ease;
   pointer-events: none;
 }
 
@@ -688,7 +697,7 @@ img { max-width: 100%; display: block; }
   border-radius: var(--r-sm);
   color: var(--gold);
   background: rgba(201, 168, 108, 0.05);
-  transition: transform 0.4s var(--ease-out), background 0.35s ease, border-color 0.35s ease, box-shadow 0.4s var(--ease-out);
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-fast) ease, border-color var(--dur-fast) ease, box-shadow var(--dur-base) var(--ease-out);
 }
 
 .box-icon svg { width: 23px; height: 23px; }
@@ -724,11 +733,11 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
-  transition: color 0.3s ease;
+  transition: color var(--dur-micro) ease;
   padding-top: 4px;
 }
 
-.box-arrow { transition: transform 0.35s var(--ease-out); }
+.box-arrow { transition: transform var(--dur-fast) var(--ease-out); }
 
 .service-box:hover .box-link { color: var(--gold-hover); }
 .service-box:hover .box-arrow { transform: translateX(4px); }
@@ -765,7 +774,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   border-radius: var(--r-card);
   margin-bottom: var(--gap-grid);
-  transition: transform 0.45s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.4s ease;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-fast) ease;
   will-change: transform;
 }
 
@@ -786,7 +795,7 @@ img { max-width: 100%; display: block; }
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s var(--ease-out);
+  transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .featured-portfolio-card:hover .portfolio-image-frame img {
@@ -883,7 +892,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.74rem;
   font-weight: 500;
   color: var(--body);
-  transition: all 0.3s ease;
+  transition: border-color var(--dur-fast) ease, color var(--dur-fast) ease, background var(--dur-fast) ease;
 }
 
 .portfolio-tags span:hover {
@@ -898,7 +907,7 @@ img { max-width: 100%; display: block; }
   gap: 0;
   overflow: hidden;
   border-radius: var(--r-card);
-  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out), border-color 0.4s ease;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-fast) ease;
   will-change: transform;
 }
 
@@ -915,7 +924,7 @@ img { max-width: 100%; display: block; }
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s var(--ease-out);
+  transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .sub-portfolio-card:hover .sub-img img { transform: scale(1.05); }
@@ -1033,7 +1042,7 @@ img { max-width: 100%; display: block; }
   background: rgba(18, 24, 39, 0.5);
   border-bottom: 1px solid var(--line-soft);
   border-right: 1px solid var(--line-soft);
-  transition: background 0.35s ease, transform 0.4s var(--ease-out);
+  transition: background var(--dur-fast) ease, transform var(--dur-base) var(--ease-out);
 }
 
 .stat-box:nth-child(2n) { border-right: none; }
@@ -1215,7 +1224,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-sans);
   font-size: 0.94rem;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease, background var(--dur-fast) ease;
 }
 
 .newsletter-input::placeholder { color: var(--muted); }
@@ -1292,7 +1301,7 @@ img { max-width: 100%; display: block; }
   border-radius: 50%;
   border: 1px solid var(--line);
   color: var(--gold);
-  transition: transform 0.35s var(--ease-out), background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.35s var(--ease-out);
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-fast) ease, border-color var(--dur-fast) ease, color var(--dur-fast) ease, box-shadow var(--dur-base) var(--ease-out);
 }
 
 .social-link svg { width: 17px; height: 17px; }
@@ -1340,7 +1349,8 @@ img { max-width: 100%; display: block; }
   font-size: 0.84rem;
   font-weight: 600;
   box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  transition: all 0.35s var(--ease-out);
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-fast) ease,
+    border-color var(--dur-fast) ease, color var(--dur-fast) ease, box-shadow var(--dur-base) var(--ease-out);
 }
 
 .sticky-wa-float:hover {
@@ -1368,7 +1378,7 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(14px);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity var(--dur-fast) ease;
 }
 
 .modal-backdrop.active { opacity: 1; pointer-events: auto; }
@@ -1387,7 +1397,7 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(175deg, #131A29 0%, #0E1420 100%);
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transform: scale(0.94) translateY(16px);
-  transition: transform 0.4s var(--ease-out);
+  transition: transform var(--dur-base) var(--ease-out);
 }
 
 .modal-backdrop.active .modal-box { transform: scale(1) translateY(0); }
@@ -1405,7 +1415,7 @@ img { max-width: 100%; display: block; }
   line-height: 1;
   color: var(--gold-muted);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform var(--dur-fast) var(--ease-out), color var(--dur-micro) ease, border-color var(--dur-micro) ease, background var(--dur-micro) ease;
 }
 
 .modal-close:hover { color: var(--gold-hover); border-color: var(--line); transform: rotate(90deg); }
@@ -1465,7 +1475,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.88rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-micro) ease, color var(--dur-micro) ease, background var(--dur-micro) ease;
 }
 
 .modal-btn-ghost:hover { border-color: var(--line); color: var(--cream); }
@@ -1498,8 +1508,8 @@ img { max-width: 100%; display: block; }
 ============================================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  transform: translateY(18px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
   will-change: opacity, transform;
 }
 
